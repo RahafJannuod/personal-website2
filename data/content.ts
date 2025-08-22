@@ -5,22 +5,196 @@ export const navLinks = [
     { href: '#crafts', label: 'Crafts' },
 ];
 
-export const craftProjects = [
-    { imageUrl: 'https://images.unsplash.com/photo-1568213816225-b46edd83b06e?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Floral Watercolour', category: 'Painting' },
-    { imageUrl: 'https://images.unsplash.com/photo-1565021568999-99a31a1a3e5c?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Ceramic Mugs', category: 'Pottery' },
-    { imageUrl: 'https://images.unsplash.com/photo-1620921207230-c79430c6a81e?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Woven Wall Art', category: 'Textiles' },
-    { imageUrl: 'https://images.unsplash.com/photo-1596201382908-99f38f16b23b?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Hand-poured Candles', category: 'Candles' },
-    { imageUrl: 'https://images.unsplash.com/photo-1549492321-da4a938c5d69?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Macrame Plant Hanger', category: 'Knotting' },
-    { imageUrl: 'https://images.unsplash.com/photo-1611652033959-8a3c8f8c0b1c?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Silver Ring', category: 'Jewelry' },
-    { imageUrl: 'https://images.unsplash.com/photo-1516132479538-a28a5f3e9c6a?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Hand-stitched Notebook', category: 'Bookbinding' },
-    { imageUrl: 'https://images.unsplash.com/photo-1601620297437-a6a5b6f3b06e?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Embroidered Denim', category: 'Embroidery' },
-    { imageUrl: 'https://images.unsplash.com/photo-1559563458-52792b055c05?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Leather Wallet', category: 'Leatherwork' },
-    { imageUrl: 'https://images.unsplash.com/photo-1614881189196-a1930510531c?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Pressed Flower Frame', category: 'Mixed Media' },
-    { imageUrl: 'https://images.unsplash.com/photo-1632345031435-8024A774ade5?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Linocut Print Block', category: 'Printmaking' },
-    { imageUrl: 'https://images.unsplash.com/photo-1515462277126-2dd0c2270422?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Origami Cranes', category: 'Paper Craft' },
-    { imageUrl: 'https://images.unsplash.com/photo-1605009516752-536a72c39e23?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Resin Coasters', category: 'Resin Art' },
-    { imageUrl: 'https://images.unsplash.com/photo-1618641426467-372ea0b57577?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Chunky Knit Blanket', category: 'Knitting' },
-    { imageUrl: 'https://images.unsplash.com/photo-1599409353907-28d844c15560?q=80&w=800&h=1000&auto=format&fit=crop', title: 'Modern Calligraphy', category: 'Calligraphy' },
+export interface CraftProject {
+    id: string;
+    mainImage: string;
+    title: string;
+    category: string;
+    description: string;
+    photos: string[];
+}
+
+export const craftProjects: CraftProject[] = [
+    {
+        id: 'floral-watercolour',
+        mainImage: 'https://images.unsplash.com/photo-1568213816225-b46edd83b06e?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Floral Watercolour',
+        category: 'Painting',
+        description: 'Delicate watercolour paintings featuring vibrant floral compositions and natural elements.',
+        photos: [
+            'https://images.unsplash.com/photo-1568213816225-b46edd83b06e?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1568213816225-b46edd83b06e?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1568213816225-b46edd83b06e?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'ceramic-mugs',
+        mainImage: 'https://images.unsplash.com/photo-1565021568999-99a31a1a3e5c?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Ceramic Mugs',
+        category: 'Pottery',
+        description: 'Handcrafted ceramic mugs with unique glazes and personalized designs.',
+        photos: [
+            'https://images.unsplash.com/photo-1565021568999-99a31a1a3e5c?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1565021568999-99a31a1a3e5c?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1565021568999-99a31a1a3e5c?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'woven-wall-art',
+        mainImage: 'https://images.unsplash.com/photo-1620921207230-c79430c6a81e?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Woven Wall Art',
+        category: 'Textiles',
+        description: 'Contemporary woven wall hangings using traditional techniques and modern materials.',
+        photos: [
+            'https://images.unsplash.com/photo-1620921207230-c79430c6a81e?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1620921207230-c79430c6a81e?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1620921207230-c79430c6a81e?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'hand-poured-candles',
+        mainImage: 'https://images.unsplash.com/photo-1596201382908-99f38f16b23b?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Hand-poured Candles',
+        category: 'Candles',
+        description: 'Artisanal candles made with natural waxes and essential oils in custom containers.',
+        photos: [
+            'https://images.unsplash.com/photo-1596201382908-99f38f16b23b?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1596201382908-99f38f16b23b?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1596201382908-99f38f16b23b?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'macrame-plant-hanger',
+        mainImage: 'https://images.unsplash.com/photo-1549492321-da4a938c5d69?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Macrame Plant Hanger',
+        category: 'Knotting',
+        description: 'Elegant macrame plant hangers using high-quality cotton rope and decorative beads.',
+        photos: [
+            'https://images.unsplash.com/photo-1549492321-da4a938c5d69?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1549492321-da4a938c5d69?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1549492321-da4a938c5d69?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'silver-ring',
+        mainImage: 'https://images.unsplash.com/photo-1611652033959-8a3c8f8c0b1c?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Silver Ring',
+        category: 'Jewelry',
+        description: 'Handcrafted sterling silver rings with unique designs and precious stone settings.',
+        photos: [
+            'https://images.unsplash.com/photo-1611652033959-8a3c8f8c0b1c?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1611652033959-8a3c8f8c0b1c?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1611652033959-8a3c8f8c0b1c?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'hand-stitched-notebook',
+        mainImage: 'https://images.unsplash.com/photo-1516132479538-a28a5f3e9c6a?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Hand-stitched Notebook',
+        category: 'Bookbinding',
+        description: 'Custom notebooks with hand-stitched bindings and personalized covers.',
+        photos: [
+            'https://images.unsplash.com/photo-1516132479538-a28a5f3e9c6a?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1516132479538-a28a5f3e9c6a?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1516132479538-a28a5f3e9c6a?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'embroidered-denim',
+        mainImage: 'https://images.unsplash.com/photo-1601620297437-a6a5b6f3b06e?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Embroidered Denim',
+        category: 'Embroidery',
+        description: 'Denim pieces enhanced with intricate embroidery patterns and colorful threads.',
+        photos: [
+            'https://images.unsplash.com/photo-1601620297437-a6a5b6f3b06e?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1601620297437-a6a5b6f3b06e?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1601620297437-a6a5b6f3b06e?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'leather-wallet',
+        mainImage: 'https://images.unsplash.com/photo-1559563458-52792b055c05?q=80&w=800&h=1000&1000&auto=format&fit=crop',
+        title: 'Leather Wallet',
+        category: 'Leatherwork',
+        description: 'Hand-stitched leather wallets using premium materials and traditional techniques.',
+        photos: [
+            'https://images.unsplash.com/photo-1559563458-52792b055c05?q=80&w=800&h=1000&1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1559563458-52792b055c05?q=80&w=800&h=1000&1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1559563458-52792b055c05?q=80&w=800&h=1000&1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'pressed-flower-frame',
+        mainImage: 'https://images.unsplash.com/photo-1614881189196-a1930510531c?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Pressed Flower Frame',
+        category: 'Mixed Media',
+        description: 'Framed pressed flowers preserved in resin with artistic arrangements.',
+        photos: [
+            'https://images.unsplash.com/photo-1614881189196-a1930510531c?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1614881189196-a1930510531c?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1614881189196-a1930510531c?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'linocut-print-block',
+        mainImage: 'https://images.unsplash.com/photo-1632345031435-8024A774ade5?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Linocut Print Block',
+        category: 'Printmaking',
+        description: 'Hand-carved linocut blocks for creating unique prints and patterns.',
+        photos: [
+            'https://images.unsplash.com/photo-1632345031435-8024A774ade5?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1632345031435-8024A774ade5?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1632345031435-8024A774ade5?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'origami-cranes',
+        mainImage: 'https://images.unsplash.com/photo-1515462277126-2dd0c2270422?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Origami Cranes',
+        category: 'Paper Craft',
+        description: 'Delicate origami cranes folded from colorful papers in various sizes.',
+        photos: [
+            'https://images.unsplash.com/photo-1515462277126-2dd0c2270422?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1515462277126-2dd0c2270422?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1515462277126-2dd0c2270422?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'resin-coasters',
+        mainImage: 'https://images.unsplash.com/photo-1605009516752-536a72c39e23?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Resin Coasters',
+        category: 'Resin Art',
+        description: 'Custom resin coasters with embedded designs and vibrant colors.',
+        photos: [
+            'https://images.unsplash.com/photo-1605009516752-536a72c39e23?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1605009516752-536a72c39e23?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1605009516752-536a72c39e23?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'chunky-knit-blanket',
+        mainImage: 'https://images.unsplash.com/photo-1618641426467-372ea0b57577?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Chunky Knit Blanket',
+        category: 'Knitting',
+        description: 'Cozy chunky knit blankets using soft yarns in contemporary patterns.',
+        photos: [
+            'https://images.unsplash.com/photo-1618641426467-372ea0b57577?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1618641426467-372ea0b57577?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1618641426467-372ea0b57577?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    },
+    {
+        id: 'modern-calligraphy',
+        mainImage: 'https://images.unsplash.com/photo-1599409353907-28d844c15560?q=80&w=800&h=1000&auto=format&fit=crop',
+        title: 'Modern Calligraphy',
+        category: 'Calligraphy',
+        description: 'Contemporary calligraphy pieces using modern tools and artistic lettering styles.',
+        photos: [
+            'https://images.unsplash.com/photo-1599409353907-28d844c15560?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1599409353907-28d844c15560?q=80&w=800&h=1000&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1599409353907-28d844c15560?q=80&w=800&h=1000&auto=format&fit=crop'
+        ]
+    }
 ];
 
 export const techSkills = ['Test Automation', 'CI/CD', 'Agile Methodologies', 'API Testing', 'Performance Testing', 'JavaScript', 'Python', 'SQL', 'JIRA', 'Git'];

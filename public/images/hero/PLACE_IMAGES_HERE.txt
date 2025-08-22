@@ -1,0 +1,12 @@
+🎯 HERO SECTION IMAGES
+
+Drag and drop your hero section images here:
+
+REQUIRED:
+- hero-background.jpg (or .png/.webp) - Main hero background
+
+RECOMMENDED SIZES:
+- Background: 1920x1080px or larger
+- Format: JPG, PNG, or WebP
+
+Just replace this file with your actual image! 

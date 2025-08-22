@@ -1,0 +1,27 @@
+🎯 CRAFT PROJECT GALLERY IMAGES
+
+Drag and drop your craft project images here:
+
+REQUIRED (15 images):
+- gallery-01.jpg - Floral Watercolour project
+- gallery-02.jpg - Ceramic Mugs project  
+- gallery-03.jpg - Woven Wall Art project
+- gallery-04.jpg - Hand-poured Candles project
+- gallery-05.jpg - Macrame Plant Hanger project
+- gallery-06.jpg - Silver Ring project
+- gallery-07.jpg - Hand-stitched Notebook project
+- gallery-08.jpg - Embroidered Denim project
+- gallery-09.jpg - Leather Wallet project
+- gallery-10.jpg - Pressed Flower Frame project
+- gallery-11.jpg - Linocut Print Block project
+- gallery-12.jpg - Origami Cranes project
+- gallery-13.jpg - Resin Coasters project
+- gallery-14.jpg - Chunky Knit Blanket project
+- gallery-15.jpg - Modern Calligraphy project
+
+RECOMMENDED SIZES:
+- All gallery images: 800x1000px or larger
+- Format: JPG, PNG, or WebP
+- Keep aspect ratios consistent for visual harmony
+
+Just replace these files with your actual project images! 
