@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rahaf Jannuod - A Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #053149;
+        color: #e2e8f0; /* gray-300 */
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Cormorant Garamond', serif;
+      }
+      .font-script {
+        font-family: 'Allura', cursive;
+      }
+      
+      @keyframes letter-reveal {
+        0% {
+            opacity: 0;
+            transform: translateY(30px) scale(0.8) skewY(10deg);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0) scale(1) skewY(0);
+        }
+      }
+      .animate-letter-reveal {
+        animation: letter-reveal 0.6s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+      }
+
+      @keyframes text-glow {
+        0%, 100% {
+          text-shadow:
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 20px #D43241, /* Music Red */
+            0 0 30px #D43241;
+        }
+        33% {
+          text-shadow:
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 20px #00AC95, /* Tech Green */
+            0 0 30px #00AC95;
+        }
+        66% {
+          text-shadow:
+            0 0 5px #fff,
+            0 0 10px #fff,
+            0 0 20px #F25F67, /* Crafts Pink */
+            0 0 30px #F25F67;
+        }
+      }
+
+      .animate-text-glow {
+        color: #fff;
+        animation: text-glow 6s ease-in-out infinite;
+      }
+
+      @keyframes fade-in-up {
+          from {
+              opacity: 0;
+              transform: translateY(25px);
+          }
+          to {
+              opacity: 1;
+              transform: translateY(0);
+          }
+      }
+      .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "@google/genai": "https://esm.sh/@google/generative-ai"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
