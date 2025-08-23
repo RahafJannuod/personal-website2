@@ -16,183 +16,152 @@ export interface CraftProject {
 
 export const craftProjects: CraftProject[] = [
     {
-        id: 'floral-watercolour',
-        mainImage: 'https://images.unsplash.com/photo-1568213816225-b46edd83b06e?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Floral Watercolour',
-        category: 'Painting',
-        description: 'Delicate watercolour paintings featuring vibrant floral compositions and natural elements.',
-        photos: [
-            'https://images.unsplash.com/photo-1568213816225-b46edd83b06e?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1568213816225-b46edd83b06e?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1568213816225-b46edd83b06e?q=80&w=800&h=1000&auto=format&fit=crop'
-        ]
-    },
-    {
-        id: 'ceramic-mugs',
-        mainImage: 'https://images.unsplash.com/photo-1565021568999-99a31a1a3e5c?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Ceramic Mugs',
-        category: 'Pottery',
-        description: 'Handcrafted ceramic mugs with unique glazes and personalized designs.',
-        photos: [
-            'https://images.unsplash.com/photo-1565021568999-99a31a1a3e5c?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1565021568999-99a31a1a3e5c?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1565021568999-99a31a1a3e5c?q=80&w=800&h=1000&auto=format&fit=crop'
-        ]
-    },
-    {
-        id: 'woven-wall-art',
-        mainImage: 'https://images.unsplash.com/photo-1620921207230-c79430c6a81e?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Woven Wall Art',
-        category: 'Textiles',
-        description: 'Contemporary woven wall hangings using traditional techniques and modern materials.',
-        photos: [
-            'https://images.unsplash.com/photo-1620921207230-c79430c6a81e?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1620921207230-c79430c6a81e?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1620921207230-c79430c6a81e?q=80&w=800&h=1000&auto=format&fit=crop'
-        ]
-    },
-    {
         id: 'hand-poured-candles',
-        mainImage: 'https://images.unsplash.com/photo-1596201382908-99f38f16b23b?q=80&w=800&h=1000&auto=format&fit=crop',
+        mainImage: '/images/gallery/gallery-01.jpg',
         title: 'Hand-poured Candles',
         category: 'Candles',
         description: 'Artisanal candles made with natural waxes and essential oils in custom containers.',
         photos: [
-            'https://images.unsplash.com/photo-1596201382908-99f38f16b23b?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1596201382908-99f38f16b23b?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1596201382908-99f38f16b23b?q=80&w=800&h=1000&auto=format&fit=crop'
+            '/images/gallery/gallery-01.jpg',
+            '/images/gallery/gallery-01-02.jpg',
+            '/images/gallery/gallery-01-03.jpg',
+            '/images/gallery/gallery-01-04.jpg',
+            '/images/gallery/gallery-01-05.jpg',
+            '/images/gallery/gallery-01-06.jpg',
+            '/images/gallery/gallery-01-07.jpg',
+            '/images/gallery/gallery-01-08.jpg',
+            '/images/gallery/gallery-01-09.jpg',
+            '/images/gallery/gallery-01-10.jpg',
+            '/images/gallery/gallery-01-11.jpg',
+            '/images/gallery/gallery-01-12.jpg',
+            '/images/gallery/gallery-01-13.jpg',
+            '/images/gallery/gallery-01-14.jpg'
         ]
     },
     {
-        id: 'macrame-plant-hanger',
-        mainImage: 'https://images.unsplash.com/photo-1549492321-da4a938c5d69?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Macrame Plant Hanger',
+        id: 'macrame-art',
+        mainImage: '/images/gallery/gallery-02.jpg',
+        title: 'Macrame Art',
         category: 'Knotting',
-        description: 'Elegant macrame plant hangers using high-quality cotton rope and decorative beads.',
+        description: 'Beautiful macrame pieces using high-quality cotton rope and decorative beads.',
         photos: [
-            'https://images.unsplash.com/photo-1549492321-da4a938c5d69?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1549492321-da4a938c5d69?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1549492321-da4a938c5d69?q=80&w=800&h=1000&auto=format&fit=crop'
+            '/images/gallery/gallery-02.jpg',
+            '/images/gallery/gallery-02-02.jpg',
+            '/images/gallery/gallery-02-03.jpg',
+            '/images/gallery/gallery-02-04.jpg',
+            '/images/gallery/gallery-02-05.jpg',
+            '/images/gallery/gallery-02-06.jpg',
+            '/images/gallery/gallery-02-07.jpg',
+            '/images/gallery/gallery-02-08.jpg',
+            '/images/gallery/gallery-02-09.jpg',
+            '/images/gallery/gallery-02-10.jpg'
         ]
     },
     {
-        id: 'silver-ring',
-        mainImage: 'https://images.unsplash.com/photo-1611652033959-8a3c8f8c0b1c?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Silver Ring',
-        category: 'Jewelry',
-        description: 'Handcrafted sterling silver rings with unique designs and precious stone settings.',
-        photos: [
-            'https://images.unsplash.com/photo-1611652033959-8a3c8f8c0b1c?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1611652033959-8a3c8f8c0b1c?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1611652033959-8a3c8f8c0b1c?q=80&w=800&h=1000&auto=format&fit=crop'
-        ]
-    },
-    {
-        id: 'hand-stitched-notebook',
-        mainImage: 'https://images.unsplash.com/photo-1516132479538-a28a5f3e9c6a?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Hand-stitched Notebook',
-        category: 'Bookbinding',
-        description: 'Custom notebooks with hand-stitched bindings and personalized covers.',
-        photos: [
-            'https://images.unsplash.com/photo-1516132479538-a28a5f3e9c6a?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1516132479538-a28a5f3e9c6a?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1516132479538-a28a5f3e9c6a?q=80&w=800&h=1000&auto=format&fit=crop'
-        ]
-    },
-    {
-        id: 'embroidered-denim',
-        mainImage: 'https://images.unsplash.com/photo-1601620297437-a6a5b6f3b06e?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Embroidered Denim',
-        category: 'Embroidery',
-        description: 'Denim pieces enhanced with intricate embroidery patterns and colorful threads.',
-        photos: [
-            'https://images.unsplash.com/photo-1601620297437-a6a5b6f3b06e?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1601620297437-a6a5b6f3b06e?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1601620297437-a6a5b6f3b06e?q=80&w=800&h=1000&auto=format&fit=crop'
-        ]
-    },
-    {
-        id: 'leather-wallet',
-        mainImage: 'https://images.unsplash.com/photo-1559563458-52792b055c05?q=80&w=800&h=1000&1000&auto=format&fit=crop',
-        title: 'Leather Wallet',
-        category: 'Leatherwork',
-        description: 'Hand-stitched leather wallets using premium materials and traditional techniques.',
-        photos: [
-            'https://images.unsplash.com/photo-1559563458-52792b055c05?q=80&w=800&h=1000&1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1559563458-52792b055c05?q=80&w=800&h=1000&1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1559563458-52792b055c05?q=80&w=800&h=1000&1000&auto=format&fit=crop'
-        ]
-    },
-    {
-        id: 'pressed-flower-frame',
-        mainImage: 'https://images.unsplash.com/photo-1614881189196-a1930510531c?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Pressed Flower Frame',
+        id: 'dreamcatcher',
+        mainImage: '/images/gallery/gallery-03.jpg',
+        title: 'Dreamcatcher',
         category: 'Mixed Media',
-        description: 'Framed pressed flowers preserved in resin with artistic arrangements.',
+        description: 'Handcrafted dreamcatchers with intricate designs and natural materials.',
         photos: [
-            'https://images.unsplash.com/photo-1614881189196-a1930510531c?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1614881189196-a1930510531c?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1614881189196-a1930510531c?q=80&w=800&h=1000&auto=format&fit=crop'
+            '/images/gallery/gallery-03.jpg',
+            '/images/gallery/gallery-03-02.jpg',
+            '/images/gallery/gallery-03-03.jpg',
+            '/images/gallery/gallery-03-04.jpg',
+            '/images/gallery/gallery-03-05.jpg',
+            '/images/gallery/gallery-03-06.jpg',
+            '/images/gallery/gallery-03-07.jpg',
+            '/images/gallery/gallery-03-08.jpg',
+            '/images/gallery/gallery-03-09.jpg',
+            '/images/gallery/gallery-03-10.jpg',
+            '/images/gallery/gallery-03-11.jpg',
+            '/images/gallery/gallery-03-12.jpg'
         ]
     },
     {
-        id: 'linocut-print-block',
-        mainImage: 'https://images.unsplash.com/photo-1632345031435-8024A774ade5?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Linocut Print Block',
-        category: 'Printmaking',
-        description: 'Hand-carved linocut blocks for creating unique prints and patterns.',
+        id: 'weaving-art',
+        mainImage: '/images/gallery/gallery-04.jpg',
+        title: 'Weaving Art',
+        category: 'Textiles',
+        description: 'Contemporary woven art pieces using traditional techniques and modern materials.',
         photos: [
-            'https://images.unsplash.com/photo-1632345031435-8024A774ade5?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1632345031435-8024A774ade5?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1632345031435-8024A774ade5?q=80&w=800&h=1000&auto=format&fit=crop'
+            '/images/gallery/gallery-04.jpg',
+            '/images/gallery/gallery-04-02.jpg',
+            '/images/gallery/gallery-04-03.jpg',
+            '/images/gallery/gallery-04-04.jpg',
+            '/images/gallery/gallery-04-05.jpg',
+            '/images/gallery/gallery-04-06.jpg',
+            '/images/gallery/gallery-04-07.jpg',
+            '/images/gallery/gallery-04-08.jpg'
         ]
     },
     {
-        id: 'origami-cranes',
-        mainImage: 'https://images.unsplash.com/photo-1515462277126-2dd0c2270422?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Origami Cranes',
-        category: 'Paper Craft',
-        description: 'Delicate origami cranes folded from colorful papers in various sizes.',
+        id: 'wall-hangings',
+        mainImage: '/images/gallery/gallery-05.jpg',
+        title: 'Wall Hangings',
+        category: 'Mixed Media',
+        description: 'Unique wall decorations combining various materials and artistic techniques.',
         photos: [
-            'https://images.unsplash.com/photo-1515462277126-2dd0c2270422?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1515462277126-2dd0c2270422?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1515462277126-2dd0c2270422?q=80&w=800&h=1000&auto=format&fit=crop'
+            '/images/gallery/gallery-05.jpg',
+            '/images/gallery/gallery-05-02.jpg',
+            '/images/gallery/gallery-05-03.jpg',
+            '/images/gallery/gallery-05-04.jpg',
+            '/images/gallery/gallery-05-05.jpg',
+            '/images/gallery/gallery-05-06.jpg',
+            '/images/gallery/gallery-05-07.jpg',
+            '/images/gallery/gallery-05-08.jpg',
+            '/images/gallery/gallery-05-09.jpg',
+            '/images/gallery/gallery-05-10.jpg',
+            '/images/gallery/gallery-05-11.jpg',
+            '/images/gallery/gallery-05-12.jpg',
+            '/images/gallery/gallery-05-13.jpg',
+            '/images/gallery/gallery-05-14.jpg',
+            '/images/gallery/gallery-05-15.jpg',
+            '/images/gallery/gallery-05-16.jpg'
         ]
     },
     {
-        id: 'resin-coasters',
-        mainImage: 'https://images.unsplash.com/photo-1605009516752-536a72c39e23?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Resin Coasters',
-        category: 'Resin Art',
-        description: 'Custom resin coasters with embedded designs and vibrant colors.',
+        id: 'clay-art',
+        mainImage: '/images/gallery/gallery-06.jpg',
+        title: 'Clay Art',
+        category: 'Pottery',
+        description: 'Handcrafted clay pieces with unique glazes and artistic designs.',
         photos: [
-            'https://images.unsplash.com/photo-1605009516752-536a72c39e23?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1605009516752-536a72c39e23?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1605009516752-536a72c39e23?q=80&w=800&h=1000&auto=format&fit=crop'
+            '/images/gallery/gallery-06.jpg',
+            '/images/gallery/gallery-06-02.jpg',
+            '/images/gallery/gallery-06-03.jpg',
+            '/images/gallery/gallery-06-04.jpg',
+            '/images/gallery/gallery-06-05.jpg'
         ]
     },
     {
-        id: 'chunky-knit-blanket',
-        mainImage: 'https://images.unsplash.com/photo-1618641426467-372ea0b57577?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Chunky Knit Blanket',
-        category: 'Knitting',
-        description: 'Cozy chunky knit blankets using soft yarns in contemporary patterns.',
+        id: 'mirrors-decoration',
+        mainImage: '/images/gallery/gallery-07.jpg',
+        title: 'Mirrors Decoration',
+        category: 'Mixed Media',
+        description: 'Beautifully decorated mirrors with artistic embellishments and designs.',
         photos: [
-            'https://images.unsplash.com/photo-1618641426467-372ea0b57577?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1618641426467-372ea0b57577?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1618641426467-372ea0b57577?q=80&w=800&h=1000&auto=format&fit=crop'
+            '/images/gallery/gallery-07.jpg',
+            '/images/gallery/gallery-07-02.jpg',
+            '/images/gallery/gallery-07-03.jpg'
         ]
     },
     {
-        id: 'modern-calligraphy',
-        mainImage: 'https://images.unsplash.com/photo-1599409353907-28d844c15560?q=80&w=800&h=1000&auto=format&fit=crop',
-        title: 'Modern Calligraphy',
-        category: 'Calligraphy',
-        description: 'Contemporary calligraphy pieces using modern tools and artistic lettering styles.',
+        id: 'mix-projects',
+        mainImage: '/images/gallery/gallery-08.jpg',
+        title: 'Mix Projects',
+        category: 'Mixed Media',
+        description: 'A collection of various creative projects showcasing different techniques and materials.',
         photos: [
-            'https://images.unsplash.com/photo-1599409353907-28d844c15560?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1599409353907-28d844c15560?q=80&w=800&h=1000&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1599409353907-28d844c15560?q=80&w=800&h=1000&auto=format&fit=crop'
+            '/images/gallery/gallery-08.jpg',
+            '/images/gallery/gallery-08-02.jpg',
+            '/images/gallery/gallery-08-03.jpg',
+            '/images/gallery/gallery-08-04.jpg',
+            '/images/gallery/gallery-08-05.jpg',
+            '/images/gallery/gallery-08-06.jpg',
+            '/images/gallery/gallery-08-07.jpg',
+            '/images/gallery/gallery-08-08.jpg',
+            '/images/gallery/gallery-08-09.jpg'
         ]
     }
 ];
