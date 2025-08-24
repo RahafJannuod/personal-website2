@@ -44,7 +44,7 @@ const MusicSection: React.FC = () => {
                     <div>
                         <ul className="space-y-6">
                             {displayedBands.map((band, index) => (
-                                <li key={index} className="pl-4 transition-all duration-300 hover:bg-white/5 py-2" style={{ borderLeft: `4px solid ${accentColor}` }}>
+                                <li key={index} className="pl-4 transition-all duration-300 hover:bg-white/25 py-2" style={{ borderLeft: `4px solid ${accentColor}` }}>
                                     <p className="text-xl font-bold text-white">{band.name}</p>
                                     <p className="text-lg text-gray-300">{band.role}</p>
                                     <div className="flex items-center text-sm text-gray-400 mt-1">

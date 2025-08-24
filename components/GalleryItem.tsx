@@ -8,23 +8,21 @@ interface GalleryItemProps {
 }
 
 const GalleryItem: React.FC<GalleryItemProps> = ({ project, accentColor, onClick }) => {
-    // Debug logging
-    console.log('GalleryItem rendering:', project.title, 'Image:', project.mainImage);
     
     return (
         <div 
-            className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full h-full"
             onClick={() => onClick(project)}
         >
             <img 
                 src={project.mainImage} 
                 alt={project.title} 
-                className="w-full h-full object-cover transform transition-transform duration-700 ease-in-out group-hover:scale-110"
-                onLoad={() => console.log('Image loaded successfully:', project.mainImage)}
+                className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-in-out group-hover:scale-110"
+                style={{ minHeight: '100%', minWidth: '100%' }}
+                onLoad={() => {}}
                 onError={(e) => {
-                    console.error('Image failed to load:', project.mainImage, e);
                     const target = e.target as HTMLImageElement;
-                    target.src = '/images/placeholder.jpg';
+                    target.style.display = 'none';
                 }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
@@ -42,7 +40,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ project, accentColor, onClick
             </div>
             
             {/* Click indicator */}
-            <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute top-4 right-4 bg-white/70 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />

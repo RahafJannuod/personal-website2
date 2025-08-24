@@ -9,10 +9,10 @@ const HeroSection: React.FC = () => {
                 style={{ backgroundImage: `url('${imageAssets.hero.background}')` }}
                 aria-hidden="true"
             ></div>
-            <div className="absolute top-0 left-0 w-full h-full bg-black/30"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
 
             <div className="relative w-full h-full flex items-center md:justify-end">
-                <div className="w-full md:w-1/2 h-full bg-black/20 backdrop-blur-sm flex items-center justify-center">
+                <div className="w-full md:w-1/2 h-full bg-white/15 backdrop-blur-sm flex items-center justify-center">
                     <div className="px-8 sm:px-12 md:px-16 lg:px-24 text-center md:text-left">
                         <h1 className="text-6xl md:text-7xl lg:text-8xl leading-tight font-script whitespace-nowrap animate-text-glow">
                             Rahaf Jannuod

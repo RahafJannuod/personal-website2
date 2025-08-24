@@ -19,7 +19,7 @@ const Section: React.FC<SectionProps> = ({ id, backgroundImageUrl, title, subtit
         ></div>
         
         <div className="relative container mx-auto px-6 py-20 md:py-28 z-10">
-            <div className="bg-black/20 backdrop-blur-md rounded-xl shadow-2xl p-8 md:p-16">
+            <div className="bg-white/20 backdrop-blur-md rounded-xl shadow-2xl p-8 md:p-16">
                 <FadeIn>
                     <div className="max-w-3xl mx-auto text-center mb-16">
                         <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: accentColor }}>{title}</h2>

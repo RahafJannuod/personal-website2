@@ -53,7 +53,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-95 backdrop-blur-sm">
             <div className="relative w-full max-w-6xl mx-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
                 {/* Header */}
                 <div className="bg-gradient-to-r from-gray-800 to-gray-700 px-6 py-4 border-b border-gray-600">
@@ -80,81 +80,84 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                         {project.description}
                     </p>
 
-                    {/* Main Photo Display */}
-                    <div className="relative mb-6">
-                        <div className="relative overflow-hidden rounded-xl bg-gray-800 border border-gray-600">
-                            <img
-                                src={project.photos[currentPhotoIndex]}
-                                alt={`${project.title} - Photo ${currentPhotoIndex + 1}`}
-                                className="w-full h-96 object-cover"
-                                onError={(e) => {
-                                    const target = e.target as HTMLImageElement;
-                                    target.src = '/images/placeholder.jpg';
-                                }}
-                            />
+                    {/* Side-by-side Layout */}
+                    <div className="flex gap-6 mb-6">
+                        {/* Main Photo Display - Left Side */}
+                        <div className="flex-1">
+                            <div className="relative overflow-hidden rounded-xl bg-gray-800 border border-gray-600" style={{ height: '500px' }}>
+                                <img
+                                    src={project.photos[currentPhotoIndex]}
+                                    alt={`${project.title} - Photo ${currentPhotoIndex + 1}`}
+                                    className="w-full h-full object-contain"
+                                    onError={(e) => {
+                                        const target = e.target as HTMLImageElement;
+                                        target.src = '/images/placeholder.jpg';
+                                    }}
+                                />
+                                
+                                {/* Navigation Arrows */}
+                                {project.photos.length > 1 && (
+                                    <>
+                                        <button
+                                            onClick={prevPhoto}
+                                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-95 hover:bg-opacity-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 border border-gray-600"
+                                        >
+                                            <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                            </svg>
+                                        </button>
+                                        <button
+                                            onClick={nextPhoto}
+                                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-95 hover:bg-opacity-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 border border-gray-600"
+                                        >
+                                            <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                            </svg>
+                                        </button>
+                                    </>
+                                )}
+                            </div>
+                            
+                            {/* Photo Counter */}
+                            {project.photos.length > 1 && (
+                                <div className="text-center mt-4">
+                                    <span className="text-gray-400 bg-gray-800 px-4 py-2 rounded-full border border-gray-600">
+                                        Photo {currentPhotoIndex + 1} of {project.photos.length}
+                                    </span>
+                                </div>
+                            )}
                         </div>
-                        
-                        {/* Navigation Arrows */}
+
+                        {/* Thumbnail Grid - Right Side */}
                         {project.photos.length > 1 && (
-                            <>
-                                <button
-                                    onClick={prevPhoto}
-                                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-90 hover:bg-opacity-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 border border-gray-600"
-                                >
-                                    <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                                    </svg>
-                                </button>
-                                <button
-                                    onClick={nextPhoto}
-                                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-90 hover:bg-opacity-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 border border-gray-600"
-                                >
-                                    <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                    </svg>
-                                </button>
-                            </>
+                            <div className="w-64">
+                                <h3 className="text-lg font-semibold text-white mb-4">All Photos</h3>
+                                <div className="grid grid-cols-2 gap-3 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+                                    {project.photos.map((photo, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => goToPhoto(index)}
+                                            className={`transition-all duration-200 ${
+                                                index === currentPhotoIndex
+                                                    ? 'ring-4 ring-pink-500 scale-105'
+                                                    : 'hover:scale-105'
+                                            }`}
+                                        >
+                                            <img
+                                                src={photo}
+                                                alt={`${project.title} - Thumbnail ${index + 1}`}
+                                                className="w-full h-24 object-cover rounded-lg shadow-md border border-gray-600"
+                                                onError={(e) => {
+                                                    const target = e.target as HTMLImageElement;
+                                                    target.src = '/images/placeholder.jpg';
+                                                }}
+                                            />
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
                         )}
                     </div>
-
-                    {/* Photo Counter */}
-                    {project.photos.length > 1 && (
-                        <div className="text-center mb-6">
-                            <span className="text-gray-400 bg-gray-800 px-4 py-2 rounded-full border border-gray-600">
-                                Photo {currentPhotoIndex + 1} of {project.photos.length}
-                            </span>
-                        </div>
-                    )}
-
-                    {/* Horizontal Photo Gallery */}
-                    {project.photos.length > 1 && (
-                        <div className="mb-6">
-                            <h3 className="text-lg font-semibold text-white mb-4">All Photos</h3>
-                            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
-                                {project.photos.map((photo, index) => (
-                                    <button
-                                        key={index}
-                                        onClick={() => goToPhoto(index)}
-                                        className={`flex-shrink-0 transition-all duration-200 ${
-                                            index === currentPhotoIndex
-                                                ? 'ring-4 ring-pink-500 scale-105'
-                                                : 'hover:scale-105'
-                                        }`}
-                                    >
-                                        <img
-                                            src={photo}
-                                            alt={`${project.title} - Thumbnail ${index + 1}`}
-                                            className="w-24 h-24 object-cover rounded-lg shadow-md border border-gray-600"
-                                            onError={(e) => {
-                                                const target = e.target as HTMLImageElement;
-                                                target.src = '/images/placeholder.jpg';
-                                            }}
-                                        />
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    )}
                 </div>
 
                 {/* Footer */}
