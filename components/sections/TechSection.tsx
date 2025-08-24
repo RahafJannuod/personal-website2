@@ -49,7 +49,7 @@ const TechSection: React.FC = () => {
                     </FadeIn>
                     <FadeInStagger className="grid md:grid-cols-2 gap-6">
                         {displayedCourses.map(course => (
-                            <li key={course.title} className="p-5 bg-white/5 rounded-lg list-none transition-all duration-300 hover:bg-white/10 hover:shadow-lg flex flex-col h-full">
+                            <li key={course.title} className="p-5 bg-white/25 rounded-lg list-none transition-all duration-300 hover:bg-white/35 hover:shadow-lg flex flex-col h-full">
                                 <p className="font-semibold text-lg text-white">{course.title}</p>
                                 <p className="text-md text-gray-300 mb-1">{course.provider}</p>
                                 <div className="text-xs text-gray-400 flex flex-wrap gap-x-4 gap-y-1">

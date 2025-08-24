@@ -53,7 +53,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-95 backdrop-blur-sm">
             <div className="relative w-full max-w-6xl mx-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
                 {/* Header */}
                 <div className="bg-gradient-to-r from-gray-800 to-gray-700 px-6 py-4 border-b border-gray-600">
@@ -100,7 +100,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                                     <>
                                         <button
                                             onClick={prevPhoto}
-                                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-90 hover:bg-opacity-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 border border-gray-600"
+                                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-95 hover:bg-opacity-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 border border-gray-600"
                                         >
                                             <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -108,7 +108,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                                         </button>
                                         <button
                                             onClick={nextPhoto}
-                                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-90 hover:bg-opacity-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 border border-gray-600"
+                                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-95 hover:bg-opacity-100 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 border border-gray-600"
                                         >
                                             <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
