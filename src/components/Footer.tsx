@@ -5,13 +5,13 @@ const Footer: React.FC = () => {
     return (
         <footer 
             id="contact"
-            className="relative py-8 text-gray-800 overflow-hidden bg-cover bg-center"
+            className="relative py-4 text-white overflow-hidden bg-cover bg-center"
             style={{ backgroundImage: `url('${imageAssets.footer.background}')` }}
         >
             <div 
                 className="absolute inset-0"
                 style={{
-                    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                    backgroundColor: 'rgba(5, 49, 73, 0.95)', // This matches the bg-[#053149] from the header
                     backdropFilter: 'blur(4px)',
                 }}
                 aria-hidden="true"
@@ -56,7 +56,6 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
                 <p>&copy; {new Date().getFullYear()} Rahaf Jannuod. All Rights Reserved.</p>
-                <p className="text-sm mt-1">A harmonious blend of art, music, and technology.</p>
             </div>
         </footer>
     );

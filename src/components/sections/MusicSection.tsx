@@ -65,24 +65,24 @@ const MusicSection: React.FC = () => {
                     style={createGlowTextStyle(accentColor)}>
                     Bands & Orchestras
                 </h3>
-                <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-10 text-gray-300">
-                    <div className="bg-black/20 backdrop-blur-sm rounded-lg p-6 shadow-2xl">
-                        <ul className="space-y-6">
+                <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-gray-300">
+                    <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl flex flex-col">
+                        <ul className="space-y-4 flex-grow">
                             {displayedBands.map((band, index) => (
                                 <li key={index} className="pl-4 transition-all duration-300 hover:bg-white/25 py-2 rounded" 
                                     style={{ 
                                         borderLeft: `4px solid ${accentColor}`,
                                         ...createLightGlowTextStyle(accentColor)
                                     }}>
-                                    <p className="text-xl font-bold text-white" style={{
+                                    <p className="text-lg font-bold text-white" style={{
                                         textShadow: `
                                             0 0 2px rgba(255,255,255,.7),
                                             0 0 4px ${accentColor}aa,
                                             0 0 6px ${accentColor}88
                                         `
                                     }}>{band.name}</p>
-                                    <p className="text-lg" style={{ color: '#fff' }}>{band.role}</p>
-                                    <div className="flex items-center text-sm mt-1" style={{ color: '#fff' }}>
+                                    <p className="text-base" style={{ color: '#fff' }}>{band.role}</p>
+                                    <div className="flex items-center text-sm" style={{ color: '#fff' }}>
                                         <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                                             <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                                         </svg>
@@ -94,7 +94,7 @@ const MusicSection: React.FC = () => {
                         {bandsAndOrchestras.length > 3 && (
                             <button
                                 onClick={() => setShowAllBands(!showAllBands)}
-                                className="mt-6 font-semibold hover:text-white transition-colors duration-300 flex items-center group"
+                                className="mt-4 font-semibold hover:text-white transition-colors duration-300 flex items-center group"
                                 style={{ color: accentColor }}
                                 aria-expanded={showAllBands}
                             >
@@ -105,12 +105,13 @@ const MusicSection: React.FC = () => {
                             </button>
                         )}
                     </div>
-                    <div className="flex items-start">
-                        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full">
+                    <div className="flex items-start h-full">
+                        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full h-full">
                             <img 
                                 src={imageAssets.music.orchestra} 
                                 alt="Performing with an orchestra" 
-                                className="rounded-lg shadow-lg w-full object-cover aspect-4/3"
+                                className="rounded-lg shadow-lg w-full h-full object-cover"
+                                style={{ minHeight: '300px', maxHeight: '400px' }}
                             />
                         </div>
                     </div>
