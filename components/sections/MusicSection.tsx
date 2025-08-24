@@ -108,9 +108,15 @@ const MusicSection: React.FC = () => {
                     <div className="flex items-start">
                         <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full">
                             <img 
-                                src={imageAssets.music.orchestra} 
-                                alt="Performing with an orchestra" 
+                                src={imageAssets.music.performance} 
+                                alt="Musical performance" 
                                 className="rounded-lg shadow-lg w-full object-cover aspect-4/3"
+                                onError={(e) => {
+                                    console.error('Error loading image:', e);
+                                    const target = e.target as HTMLImageElement;
+                                    target.onerror = null; // Prevent infinite loop
+                                    target.style.display = 'none';
+                                }}
                             />
                         </div>
                     </div>

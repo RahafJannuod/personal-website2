@@ -109,8 +109,8 @@ const MusicSection: React.FC = () => {
                     <div className="flex items-start h-full">
                         <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full h-full">
                             <img 
-                                src={imageAssets.music.orchestra} 
-                                alt="Performing with an orchestra" 
+                                src={imageAssets.music.performance} 
+                                alt="Musical performance" 
                                 className="rounded-lg shadow-lg w-full h-full object-cover"
                                 style={{ minHeight: '300px', maxHeight: '400px' }}
                             />

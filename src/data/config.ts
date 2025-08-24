@@ -19,6 +19,7 @@ export const imageAssets = {
         background: '/images/music/music-background.jpg',
         percussion: '/images/music/music-percussion.jpg',
         orchestra: '/images/music/music-orchestra.jpg',
+        performance: '/images/music/music-performance.jpg',
     },
     crafts: {
         background: '/images/crafts/crafts-background.jpg',
