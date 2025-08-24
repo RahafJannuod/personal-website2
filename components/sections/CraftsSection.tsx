@@ -11,15 +11,6 @@ const CraftsSection: React.FC = () => {
     const [selectedProject, setSelectedProject] = useState<CraftProject | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    // Debug logging
-    useEffect(() => {
-        console.log('CraftsSection loaded');
-        console.log('craftProjects:', craftProjects);
-        console.log('Number of projects:', craftProjects.length);
-        craftProjects.forEach((project, index) => {
-            console.log(`Project ${index + 1}:`, project.title, 'Image:', project.mainImage);
-        });
-    }, []);
 
     const handleProjectClick = (project: CraftProject) => {
         setSelectedProject(project);

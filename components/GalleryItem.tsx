@@ -8,8 +8,6 @@ interface GalleryItemProps {
 }
 
 const GalleryItem: React.FC<GalleryItemProps> = ({ project, accentColor, onClick }) => {
-    // Debug logging
-    console.log('GalleryItem rendering:', project.title, 'Image:', project.mainImage);
     
     return (
         <div 
@@ -21,11 +19,10 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ project, accentColor, onClick
                 alt={project.title} 
                 className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-in-out group-hover:scale-110"
                 style={{ minHeight: '100%', minWidth: '100%' }}
-                onLoad={() => console.log('Image loaded successfully:', project.mainImage)}
+                onLoad={() => {}}
                 onError={(e) => {
-                    console.error('Image failed to load:', project.mainImage, e);
                     const target = e.target as HTMLImageElement;
-                    target.src = '/images/placeholder.jpg';
+                    target.style.display = 'none';
                 }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
