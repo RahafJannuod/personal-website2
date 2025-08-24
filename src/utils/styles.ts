@@ -22,6 +22,8 @@ export const createGlowTextStyle = (color: string, intensity: 'low' | 'medium' |
   return {
     color: '#fff',
     textShadow: `
+      0 0 8px rgba(0,0,0,0.8),
+      0 2px 4px rgba(0,0,0,0.6),
       0 0 2px rgba(255,255,255,${base}),
       0 0 4px rgba(255,255,255,${mid}),
       0 0 6px rgba(255,255,255,${light}),
@@ -34,5 +36,10 @@ export const createGlowTextStyle = (color: string, intensity: 'low' | 'medium' |
 
 export const createLightGlowTextStyle = (color: string) => ({
   color: '#fff',
-  textShadow: `0 0 10px ${color}44`
+  textShadow: `
+    0 0 8px rgba(0,0,0,0.8),
+    0 2px 4px rgba(0,0,0,0.6),
+    0 0 10px ${color}44,
+    0 0 15px ${color}33
+  `
 });

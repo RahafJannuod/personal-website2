@@ -17,10 +17,18 @@ const HeroSection: React.FC = () => {
                         <h1 className="text-5xl md:text-6xl lg:text-7xl leading-tight font-script whitespace-nowrap animate-text-glow">
                             Rahaf Jannuod
                         </h1>
-                        <p className="mt-3 text-base md:text-lg lg:text-xl text-gray-200 max-w-xl animate-fade-in-up" style={{ animationDelay: '800ms', opacity: 0 }}>
+                        <p className="mt-3 text-base md:text-lg lg:text-xl text-white max-w-xl animate-fade-in-up" style={{ 
+                            animationDelay: '800ms', 
+                            opacity: 0,
+                            textShadow: '0 0 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6)'
+                        }}>
                             Blending art, music, craft, and technology with elegance, energy, and intelligence.
                         </p>
-                        <p className="mt-3 text-base md:text-lg lg:text-xl text-gray-200 max-w-xl animate-fade-in-up" style={{ animationDelay: '900ms', opacity: 0 }}>
+                        <p className="mt-3 text-base md:text-lg lg:text-xl text-white max-w-xl animate-fade-in-up" style={{ 
+                            animationDelay: '900ms', 
+                            opacity: 0,
+                            textShadow: '0 0 8px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.6)'
+                        }}>
                             Here, you'll find a collection of my work, a testament to a journey fueled by passion and a relentless desire to create and innovate.
                         </p>
                     </div>

@@ -65,7 +65,8 @@ const MusicSection: React.FC = () => {
                     style={createGlowTextStyle(accentColor)}>
                     Bands & Orchestras
                 </h3>
-                <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-gray-300">
+                <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-white"
+                    style={{ textShadow: '0 0 6px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.6)' }}>
                     <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl flex flex-col">
                         <ul className="space-y-4 flex-grow">
                             {displayedBands.map((band, index) => (
@@ -126,7 +127,8 @@ const MusicSection: React.FC = () => {
                     </h3>
                 </FadeIn>
                 <div className="max-w-5xl mx-auto">
-                    <FadeInStagger className="grid md:grid-cols-3 gap-8 text-center text-gray-300">
+                    <FadeInStagger className="grid md:grid-cols-3 gap-8 text-center text-white"
+                        style={{ textShadow: '0 0 6px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.6)' }}>
                         <div>
                             <h4 className="text-2xl font-bold mb-2" 
                                 style={createGlowTextStyle(accentColor)}>
@@ -154,9 +156,11 @@ const MusicSection: React.FC = () => {
                           onClick={handleContactClick}
                           className="inline-block font-bold py-3 px-8 rounded-full transform transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 relative overflow-hidden"
                           style={{ 
-                              backgroundColor: 'rgba(0,0,0,0.3)',
+                              backgroundColor: 'rgba(0,0,0,0.5)',
                               color: '#fff',
                               textShadow: `
+                                  0 0 8px rgba(0,0,0,0.8),
+                                  0 2px 4px rgba(0,0,0,0.6),
                                   0 0 2px rgba(255,255,255,.7),
                                   0 0 4px rgba(255,255,255,.5),
                                   0 0 6px rgba(255,255,255,.3),

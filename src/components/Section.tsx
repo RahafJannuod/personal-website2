@@ -28,6 +28,8 @@ const Section: React.FC<SectionProps> = ({ id, backgroundImageUrl, title, subtit
                             style={{ 
                                 color: '#fff',
                                 textShadow: `
+                                    0 0 8px rgba(0,0,0,0.9),
+                                    0 2px 4px rgba(0,0,0,0.7),
                                     0 0 2px rgba(255,255,255,.7),
                                     0 0 4px rgba(255,255,255,.5),
                                     0 0 6px rgba(255,255,255,.3),
@@ -39,10 +41,14 @@ const Section: React.FC<SectionProps> = ({ id, backgroundImageUrl, title, subtit
                         >
                             {title}
                         </h2>
-                        <p className="text-lg leading-relaxed backdrop-blur-sm bg-black/10 p-4 rounded-lg"
+                        <p className="text-lg leading-relaxed backdrop-blur-sm bg-black/20 p-4 rounded-lg"
                             style={{
                                 color: '#fff',
-                                textShadow: `0 0 10px ${accentColor}44`
+                                textShadow: `
+                                    0 0 6px rgba(0,0,0,0.8),
+                                    0 1px 3px rgba(0,0,0,0.6),
+                                    0 0 10px ${accentColor}44
+                                `
                             }}>
                             {subtitle}
                         </p>
