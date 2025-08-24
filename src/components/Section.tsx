@@ -18,8 +18,9 @@ const Section: React.FC<SectionProps> = ({ id, backgroundImageUrl, title, subtit
             aria-hidden="true"
         ></div>
         
-        <div className="relative container mx-auto px-6 py-20 md:py-28 z-10">
-            <div className="bg-white/20 backdrop-blur-md rounded-xl shadow-2xl p-8 md:p-16">
+        <div className="relative w-full px-4 py-20 md:py-28 z-10">
+            <div className="max-w-5xl mx-auto">
+                <div className="bg-white/20 backdrop-blur-md rounded-xl shadow-2xl p-8 md:p-16">
                 <FadeIn>
                     <div className="max-w-3xl mx-auto text-center mb-16">
                         <h2 
@@ -48,6 +49,7 @@ const Section: React.FC<SectionProps> = ({ id, backgroundImageUrl, title, subtit
                     </div>
                 </FadeIn>
                 {children}
+                </div>
             </div>
         </div>
     </section>

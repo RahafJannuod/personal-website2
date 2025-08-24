@@ -71,10 +71,31 @@ const TechSection: React.FC = () => {
                     </FadeIn>
                     <FadeInStagger className="grid md:grid-cols-2 gap-6">
                         {displayedCourses.map(course => (
-                            <li key={course.title} className="p-5 bg-white/25 rounded-lg list-none transition-all duration-300 hover:bg-white/35 hover:shadow-lg flex flex-col h-full">
-                                <p className="font-semibold text-lg text-white">{course.title}</p>
-                                <p className="text-md text-gray-300 mb-1">{course.provider}</p>
-                                <div className="text-xs text-gray-400 flex flex-wrap gap-x-4 gap-y-1">
+                            <li 
+                                key={course.title} 
+                                className="p-5 rounded-lg list-none transition-all duration-200 flex flex-col h-full hover:scale-105 hover:shadow-xl backdrop-blur-md border"
+                                style={{
+                                    backgroundColor: `${accentColor}55`,
+                                    borderColor: `${accentColor}60`,
+                                    boxShadow: `0 2px 4px ${accentColor}30, 0 4px 8px rgba(0,0,0,.2), inset 0 0 12px ${accentColor}15`
+                                }}
+                            >
+                                <p className="font-semibold text-lg" style={{
+                                    color: '#fff',
+                                    textShadow: `
+                                        0 0 1px rgba(255,255,255,.7),
+                                        0 0 2px ${accentColor}aa,
+                                        0 0 4px ${accentColor}88
+                                    `
+                                }}>{course.title}</p>
+                                <p className="text-md mb-1" style={{
+                                    color: '#fff',
+                                    textShadow: `0 0 4px ${accentColor}88`
+                                }}>{course.provider}</p>
+                                <div className="text-xs flex flex-wrap gap-x-4 gap-y-1" style={{
+                                    color: '#fff',
+                                    textShadow: `0 0 4px ${accentColor}66`
+                                }}>
                                     <span>Issued: {course.issued}</span>
                                     <span>Credential ID: {course.credentialId}</span>
                                 </div>
