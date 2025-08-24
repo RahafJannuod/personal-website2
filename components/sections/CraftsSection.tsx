@@ -52,14 +52,10 @@ const CraftsSection: React.FC = () => {
                         <h3 className="text-4xl font-bold text-center mb-12" style={{ color: accentColor }}>Project Gallery</h3>
                     </FadeIn>
                     
-                    {/* Debug info */}
-                    <div className="text-center mb-4 text-white/60">
-                        <p>Debug: {craftProjects.length} projects loaded</p>
-                    </div>
                     
                     <FadeInStagger className="project-gallery flex overflow-x-auto space-x-6 pb-4 snap-x snap-mandatory">
                         {craftProjects.map((project, index) => (
-                            <div key={project.id} className="flex-shrink-0 w-64 h-[320px] md:w-80 md:h-[400px] snap-center">
+                            <div key={project.id} className="flex-shrink-0 w-80 h-[400px] snap-center">
                                 <GalleryItem 
                                     project={project} 
                                     accentColor={accentColor} 

@@ -13,13 +13,14 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ project, accentColor, onClick
     
     return (
         <div 
-            className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full h-full"
             onClick={() => onClick(project)}
         >
             <img 
                 src={project.mainImage} 
                 alt={project.title} 
-                className="w-full h-full object-cover transform transition-transform duration-700 ease-in-out group-hover:scale-110"
+                className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-in-out group-hover:scale-110"
+                style={{ minHeight: '100%', minWidth: '100%' }}
                 onLoad={() => console.log('Image loaded successfully:', project.mainImage)}
                 onError={(e) => {
                     console.error('Image failed to load:', project.mainImage, e);

@@ -143,25 +143,15 @@ export const craftProjects: CraftProject[] = [
         photos: [
             '/images/gallery/gallery-07.jpg',
             '/images/gallery/gallery-07-02.jpg',
-            '/images/gallery/gallery-07-03.jpg'
-        ]
-    },
-    {
-        id: 'mix-projects',
-        mainImage: '/images/gallery/gallery-08.jpg',
-        title: 'Mix Projects',
-        category: 'Mixed Media',
-        description: 'A collection of various creative projects showcasing different techniques and materials.',
-        photos: [
-            '/images/gallery/gallery-08.jpg',
-            '/images/gallery/gallery-08-02.jpg',
-            '/images/gallery/gallery-08-03.jpg',
-            '/images/gallery/gallery-08-04.jpg',
-            '/images/gallery/gallery-08-05.jpg',
-            '/images/gallery/gallery-08-06.jpg',
-            '/images/gallery/gallery-08-07.jpg',
-            '/images/gallery/gallery-08-08.jpg',
-            '/images/gallery/gallery-08-09.jpg'
+            '/images/gallery/gallery-07-03.jpg',
+            '/images/gallery/gallery-07-04.jpg',
+            '/images/gallery/gallery-07-05.jpg',
+            '/images/gallery/gallery-07-06.jpg',
+            '/images/gallery/gallery-07-07.jpg',
+            '/images/gallery/gallery-07-08.jpg',
+            '/images/gallery/gallery-07-09.jpg',
+            '/images/gallery/gallery-07-10.jpg',
+            '/images/gallery/gallery-07-11.jpg'
         ]
     }
 ];
