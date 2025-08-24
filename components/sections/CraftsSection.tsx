@@ -40,7 +40,20 @@ const CraftsSection: React.FC = () => {
                 `}</style>
                 <div>
                     <FadeIn>
-                        <h3 className="text-4xl font-bold text-center mb-12" style={{ color: accentColor }}>Project Gallery</h3>
+                        <h3 className="text-4xl font-bold text-center mb-12" 
+                            style={{ 
+                                color: '#fff',
+                                textShadow: `
+                                    0 0 2px rgba(255,255,255,.7),
+                                    0 0 4px rgba(255,255,255,.5),
+                                    0 0 6px rgba(255,255,255,.3),
+                                    0 0 10px ${accentColor}aa,
+                                    0 0 14px ${accentColor}88,
+                                    0 0 18px ${accentColor}44
+                                `
+                            }}>
+                            Projects Gallery
+                        </h3>
                     </FadeIn>
                     
                     
@@ -58,7 +71,11 @@ const CraftsSection: React.FC = () => {
                     
                     {/* Gallery Instructions */}
                     <FadeIn className="mt-8 text-center">
-                        <p className="text-white/80 text-lg">
+                        <p className="text-lg"
+                            style={{
+                                color: '#fff',
+                                textShadow: `0 0 10px ${accentColor}44`
+                            }}>
                             💡 Click on any project to explore more photos and details
                         </p>
                     </FadeIn>

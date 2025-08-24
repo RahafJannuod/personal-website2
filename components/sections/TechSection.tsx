@@ -23,9 +23,35 @@ const TechSection: React.FC = () => {
         >
             <div className="grid md:grid-cols-5 gap-10 items-center mb-16">
                 <FadeIn className="md:col-span-3">
-                    <h3 className="text-4xl font-bold mb-6" style={{ color: accentColor }}>My Tech Journey</h3>
-                    <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
-                        <p>My career is driven by a curiosity for how things work. As a QA Engineer at <span className="font-semibold" style={{ color: accentColor }}>SoundCloud</span>, I help deliver a flawless audio experience to millions, blending meticulous manual testing with sophisticated test automation.</p>
+                    <h3 className="text-4xl font-bold mb-6" 
+                        style={{ 
+                            color: '#fff',
+                            textShadow: `
+                                0 0 2px rgba(255,255,255,.7),
+                                0 0 4px rgba(255,255,255,.5),
+                                0 0 6px rgba(255,255,255,.3),
+                                0 0 10px ${accentColor}aa,
+                                0 0 14px ${accentColor}88,
+                                0 0 18px ${accentColor}44
+                            `
+                        }}
+                    >
+                        My Tech Journey
+                    </h3>
+                    <div className="space-y-4 text-lg leading-relaxed"
+                        style={{
+                            color: '#fff',
+                            textShadow: `0 0 10px ${accentColor}44`
+                        }}>
+                        <p>My career is driven by a curiosity for how things work. As a QA Engineer at <span className="font-semibold" 
+                            style={{ 
+                                color: '#fff',
+                                textShadow: `
+                                    0 0 2px rgba(255,255,255,.7),
+                                    0 0 4px ${accentColor}aa,
+                                    0 0 6px ${accentColor}88
+                                `
+                            }}>SoundCloud</span>, I help deliver a flawless audio experience to millions, blending meticulous manual testing with sophisticated test automation.</p>
                         <p>I am fascinated by the potential of AI to revolutionize software testing and am actively pursuing knowledge in this transformative field.</p>
                     </div>
                 </FadeIn>
@@ -37,7 +63,21 @@ const TechSection: React.FC = () => {
             <div className="space-y-16">
                 <div>
                     <FadeIn>
-                        <h3 className="text-3xl font-bold mb-8" style={{ color: accentColor }}>Skills & Expertise</h3>
+                        <h3 className="text-3xl font-bold mb-8"
+                            style={{ 
+                                color: '#fff',
+                                textShadow: `
+                                    0 0 7px rgba(255,255,255,.9),
+                                    0 0 10px rgba(255,255,255,.9),
+                                    0 0 21px rgba(255,255,255,.9),
+                                    0 0 42px ${accentColor},
+                                    0 0 82px ${accentColor},
+                                    0 0 92px ${accentColor}
+                                `
+                            }}
+                        >
+                            Skills & Expertise
+                        </h3>
                     </FadeIn>
                     <FadeInStagger className="flex flex-wrap gap-3">
                         {techSkills.map(skill => <SkillBadge key={skill} color={accentColor}>{skill}</SkillBadge>)}
@@ -45,7 +85,21 @@ const TechSection: React.FC = () => {
                 </div>
                 <div>
                     <FadeIn>
-                        <h3 className="text-3xl font-bold mb-8" style={{ color: accentColor }}>Courses & Certifications</h3>
+                        <h3 className="text-3xl font-bold mb-8"
+                            style={{ 
+                                color: '#fff',
+                                textShadow: `
+                                    0 0 7px rgba(255,255,255,.9),
+                                    0 0 10px rgba(255,255,255,.9),
+                                    0 0 21px rgba(255,255,255,.9),
+                                    0 0 42px ${accentColor},
+                                    0 0 82px ${accentColor},
+                                    0 0 92px ${accentColor}
+                                `
+                            }}
+                        >
+                            Courses & Certifications
+                        </h3>
                     </FadeIn>
                     <FadeInStagger className="grid md:grid-cols-2 gap-6">
                         {displayedCourses.map(course => (

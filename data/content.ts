@@ -156,7 +156,19 @@ export const craftProjects: CraftProject[] = [
     }
 ];
 
-export const techSkills = ['Test Automation', 'CI/CD', 'Agile Methodologies', 'API Testing', 'Performance Testing', 'JavaScript', 'Python', 'SQL', 'JIRA', 'Git'];
+export const techSkills = [
+    'Performance Manual Testing',
+    'Test Automation',
+    'CI/CD',
+    'Agile Methodologies',
+    'API Testing',
+    'Python',
+    'JIRA',
+    'Git / GitHub',
+    'Visual Studio',
+    'Xcode',
+    'Testrail'
+];
 
 export const techCourses = [
     {
@@ -227,6 +239,21 @@ export const bandsAndOrchestras = [
         location: 'Dubai'
     },
     {
+        role: 'Music Teacher',
+        name: 'Melodica Music Academy',
+        location: 'Dubai, United Arab Emirates'
+    },
+    {
+        role: 'Percussionist',
+        name: 'Sikka Art & Design Festival 2022',
+        location: 'Dubai'
+    },
+    {
+        role: 'Timpanist',
+        name: 'Expo 2020 Dubai / Ministry of Education',
+        location: 'Dubai'
+    },
+    {
         role: 'Guitarist',
         name: 'Sufi Vibes - The AAA Reels Production and Playback Creatives Presentation',
         location: 'Dubai'
@@ -237,18 +264,48 @@ export const bandsAndOrchestras = [
         location: 'Syria'
     },
     {
-        role: 'Drums',
-        name: 'Gloria choir/Dina Bélanger',
+        role: 'Percussionist',
+        name: 'Sham Percussion Orchestra',
         location: 'Syria'
     },
     {
         role: 'Percussionist',
-        name: 'Syrian National Symphony Orchestra',
+        name: 'Damasco en los ojos de canals - Antonio Canales',
         location: 'Syria'
     },
     {
         role: 'Percussionist',
-        name: 'Damascus Conservatory Big Band',
+        name: 'Alsaid Darwesh Syrian Orchestra',
+        location: 'Syria'
+    },
+    {
+        role: 'Percussionist',
+        name: 'Syrian Brass Orchestra',
+        location: 'Syria'
+    },
+    {
+        role: 'Percussionist',
+        name: 'Orpheus Syrian Orchestra - Andreh Maluli',
+        location: 'Syria'
+    },
+    {
+        role: 'Music Teacher',
+        name: 'Solhi Alwadi Music School',
+        location: 'Syria'
+    },
+    {
+        role: 'Percussionist',
+        name: 'Qased Syrian Orchestra',
+        location: 'Syria'
+    },
+    {
+        role: 'Percussionist',
+        name: 'Nada Orchestra - Hossam Brimo',
+        location: 'Syria'
+    },
+    {
+        role: 'Music Teacher',
+        name: 'Nour Al Fajer Private School',
         location: 'Syria'
     }
 ];

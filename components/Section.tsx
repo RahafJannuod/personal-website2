@@ -22,8 +22,27 @@ const Section: React.FC<SectionProps> = ({ id, backgroundImageUrl, title, subtit
             <div className="bg-white/20 backdrop-blur-md rounded-xl shadow-2xl p-8 md:p-16">
                 <FadeIn>
                     <div className="max-w-3xl mx-auto text-center mb-16">
-                        <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ color: accentColor }}>{title}</h2>
-                        <p className="text-lg text-gray-300 leading-relaxed">
+                        <h2 
+                            className="text-5xl md:text-6xl font-bold mb-6 transition-all duration-300" 
+                            style={{ 
+                                color: '#fff',
+                                textShadow: `
+                                    0 0 2px rgba(255,255,255,.7),
+                                    0 0 4px rgba(255,255,255,.5),
+                                    0 0 6px rgba(255,255,255,.3),
+                                    0 0 10px ${accentColor}aa,
+                                    0 0 14px ${accentColor}88,
+                                    0 0 18px ${accentColor}44
+                                `
+                            }}
+                        >
+                            {title}
+                        </h2>
+                        <p className="text-lg leading-relaxed backdrop-blur-sm bg-black/10 p-4 rounded-lg"
+                            style={{
+                                color: '#fff',
+                                textShadow: `0 0 10px ${accentColor}44`
+                            }}>
                             {subtitle}
                         </p>
                     </div>
