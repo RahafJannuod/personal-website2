@@ -63,8 +63,7 @@ const CraftsSection: React.FC = () => {
                                 className="flex-shrink-0 w-80 h-[400px] snap-center"
                             >
                                 <GalleryItem 
-                                    project={project} 
-                                    accentColor={accentColor} 
+                                    project={project}
                                     onClick={handleProjectClick}
                                 />
                             </div>
