@@ -28,37 +28,6 @@ const MusicSection: React.FC = () => {
             subtitle="Percussionist | Timpanist | Teacher"
             accentColor={accentColor}
         >
-            <FadeIn className="mb-16">
-                <h3 className="text-4xl font-bold text-center mb-12" 
-                    style={createGlowTextStyle(accentColor)}>
-                    My Musical Journey
-                </h3>
-                <div className="max-w-5xl mx-auto text-center leading-relaxed text-lg grid md:grid-cols-3 gap-6 items-center">
-                    {/* Left Image */}
-                    <div className="order-2 md:order-1">
-                        <img 
-                            src={imageAssets.music.percussion} 
-                            alt="Playing percussion" 
-                            className="rounded-lg shadow-2xl w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                    </div>
-                    
-                    {/* Center Text */}
-                    <div className="order-1 md:order-2" style={createLightGlowTextStyle(accentColor)}>
-                        <p className="mb-4">Music is a universal language that connects souls. My journey began with the primal beat of the drums and expanded into orchestral percussion and the rich traditions of Middle Eastern instruments.</p>
-                        <p>Each performance is a story, each rhythm a heartbeat.</p>
-                    </div>
-                    
-                    {/* Right Image */}
-                    <div className="order-3">
-                        <img 
-                            src={imageAssets.music.orchestra} 
-                            alt="Orchestra performance" 
-                            className="rounded-lg shadow-2xl w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                    </div>
-                </div>
-            </FadeIn>
 
             <FadeIn className="mb-16">
                 <h3 className="text-4xl font-bold text-center mb-12" 
