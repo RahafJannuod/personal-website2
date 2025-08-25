@@ -29,10 +29,6 @@ const MusicSection: React.FC = () => {
             accentColor={accentColor}
         >
             <FadeIn className="mb-16">
-                <h3 className="text-4xl font-bold text-center mb-12" 
-                    style={createGlowTextStyle(accentColor)}>
-                    My Musical Journey
-                </h3>
                 <div className="max-w-5xl mx-auto text-center leading-relaxed text-lg grid md:grid-cols-3 gap-6 items-center">
                     {/* Left Image */}
                     <div className="order-2 md:order-1">
