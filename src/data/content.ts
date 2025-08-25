@@ -159,7 +159,7 @@ export const craftProjects: CraftProject[] = [
 export const techSkills = [
     'Performance Manual Testing',
     'Test Automation',
-    'CI/CD',
+    'UI/UX',
     'Agile Methodologies',
     'API Testing',
     'Python',
