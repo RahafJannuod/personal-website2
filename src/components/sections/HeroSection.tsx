@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
             <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
 
             <div className="relative w-full h-full flex items-center md:justify-end">
-                <div className="w-full md:w-1/2 h-full bg-white/15 backdrop-blur-sm flex items-center justify-center">
+                <div className="w-full md:w-1/2 h-full flex items-center justify-center">
                     <div className="px-8 sm:px-12 md:px-16 lg:px-20 text-center md:text-left">
                         <h1 
                             className="text-5xl md:text-6xl lg:text-7xl leading-tight font-heading whitespace-nowrap"
@@ -30,12 +30,14 @@ const HeroSection: React.FC = () => {
                         >
                             Rahaf Jannuod
                         </h1>
-                        <p className="mt-3 text-base md:text-lg lg:text-xl text-gray-200 max-w-xl font-body">
-                            Blending art, music, craft, and technology with elegance, energy, and intelligence.
-                        </p>
-                        <p className="mt-3 text-base md:text-lg lg:text-xl text-gray-200 max-w-xl font-body">
-                            Here, you'll find a collection of my work, a testament to a journey fueled by passion and a relentless desire to create and innovate.
-                        </p>
+                        <div className="bg-white/15 backdrop-blur-sm rounded-lg p-6 mt-4">
+                            <p className="text-base md:text-lg lg:text-xl text-gray-200 max-w-xl font-body">
+                                Blending art, music, craft, and technology with elegance, energy, and intelligence.
+                            </p>
+                            <p className="mt-3 text-base md:text-lg lg:text-xl text-gray-200 max-w-xl font-body">
+                                Here, you'll find a collection of my work, a testament to a journey fueled by passion and a relentless desire to create and innovate.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
