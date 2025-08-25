@@ -15,7 +15,7 @@ const HeroSection: React.FC = () => {
                 <div className="w-full md:w-1/2 h-full flex items-center justify-center">
                     <div className="px-8 sm:px-12 md:px-16 lg:px-20 text-center md:text-left">
                         <h1 
-                            className="text-5xl md:text-6xl lg:text-7xl leading-tight font-heading whitespace-nowrap"
+                            className="text-5xl md:text-6xl lg:text-7xl leading-tight font-heading sm:whitespace-nowrap"
                             style={{ 
                                 color: '#fff',
                                 textShadow: `

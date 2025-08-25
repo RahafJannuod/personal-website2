@@ -83,7 +83,7 @@ const Header: React.FC = () => {
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden">
-                        <button onClick={toggleMenu} aria-label="Toggle menu" className="z-50 relative">
+                        <button onClick={toggleMenu} aria-label="Toggle menu" className="z-[70] relative">
                             <div className="space-y-2">
                                 <span className={`block w-8 h-0.5 bg-white transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}></span>
                                 <span className={`block w-8 h-0.5 bg-white transition duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : ''}`}></span>
@@ -96,7 +96,7 @@ const Header: React.FC = () => {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`md:hidden fixed inset-0 bg-[#053149]/98 backdrop-blur-md pt-24 transition-transform duration-300 ease-in-out z-40 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`md:hidden fixed inset-0 bg-[#053149]/90 backdrop-blur-md pt-24 transition-transform duration-300 ease-in-out z-40 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
             >
                 <nav className="flex flex-col items-center space-y-8">
                     {navLinks.map(link => (
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
                             key={link.href}
                             href={link.href}
                             onClick={handleLinkClick}
-                            className={`text-2xl transition-colors duration-300 ${activeSection === link.href.substring(1) ? `${mobileActiveColor} font-bold` : 'text-gray-300'}`}
+                            className={`text-2xl font-medium transition-colors duration-300 ${activeSection === link.href.substring(1) ? 'text-white font-bold' : 'text-gray-200 hover:text-white'}`}
                         >
                             {link.label}
                         </a>

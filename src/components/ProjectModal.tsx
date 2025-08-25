@@ -53,8 +53,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-95 backdrop-blur-sm">
-            <div className="relative w-full max-w-6xl mx-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
+        <div className="fixed inset-0 z-[80] flex items-center justify-center bg-black bg-opacity-95 backdrop-blur-sm p-4">
+            <div className="relative w-full max-w-6xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700 max-h-[90vh] overflow-y-auto">
                 {/* Header */}
                 <div className="bg-gradient-to-r from-gray-800 to-gray-700 px-6 py-4 border-b border-gray-600">
                     <div className="flex items-center justify-between">
@@ -80,11 +80,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                         {project.description}
                     </p>
 
-                    {/* Side-by-side Layout */}
-                    <div className="flex gap-6 mb-6">
-                        {/* Main Photo Display - Left Side */}
+                    {/* Responsive Layout */}
+                    <div className="flex flex-col lg:flex-row gap-6 mb-6">
+                        {/* Main Photo Display */}
                         <div className="flex-1">
-                            <div className="relative overflow-hidden rounded-xl bg-gray-800 border border-gray-600" style={{ height: '500px' }}>
+                            <div className="relative overflow-hidden rounded-xl bg-gray-800 border border-gray-600 h-64 sm:h-80 lg:h-[500px]">
                                 <img
                                     src={project.photos[currentPhotoIndex]}
                                     alt={`${project.title} - Photo ${currentPhotoIndex + 1}`}
@@ -128,11 +128,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                             )}
                         </div>
 
-                        {/* Thumbnail Grid - Right Side */}
+                        {/* Thumbnail Grid */}
                         {project.photos.length > 1 && (
-                            <div className="w-64">
+                            <div className="w-full lg:w-64">
                                 <h3 className="text-lg font-semibold text-white mb-4">All Photos</h3>
-                                <div className="grid grid-cols-2 gap-3 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+                                <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-2 gap-3 max-h-40 lg:max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
                                     {project.photos.map((photo, index) => (
                                         <button
                                             key={index}
@@ -146,7 +146,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
                                             <img
                                                 src={photo}
                                                 alt={`${project.title} - Thumbnail ${index + 1}`}
-                                                className="w-full h-24 object-cover rounded-lg shadow-md border border-gray-600"
+                                                className="w-full h-16 lg:h-24 object-cover rounded-lg shadow-md border border-gray-600"
                                                 onError={(e) => {
                                                     const target = e.target as HTMLImageElement;
                                                     target.src = '/images/placeholder.jpg';
