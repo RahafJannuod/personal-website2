@@ -54,7 +54,7 @@ const Header: React.FC = () => {
     const mobileActiveColor = `text-[${themeColors.accent.navHover}]`;
 
     return (
-        <header className={`sticky top-0 z-50 transition-all duration-300 transform-gpu shadow-md bg-[#B9C0DA]/50 backdrop-blur-sm`}>
+        <header className={`sticky top-0 z-50 transition-all duration-300 transform-gpu shadow-md bg-[#4B5D3F]/80 backdrop-blur-sm`}>
             <div className="container mx-auto px-6">
                 <nav className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-3' : 'py-4'}`}>
                     <a href="#home" className="text-2xl font-bold font-script animate-text-glow">

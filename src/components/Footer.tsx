@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
             <div 
                 className="absolute inset-0"
                 style={{
-                    backgroundColor: 'rgba(185, 192, 218, 0.2)', // This matches the bg-[#B9C0DA]/20 from the header
+                    backgroundColor: 'rgba(75, 93, 63, 0.8)', // Army green overlay
                     backdropFilter: 'blur(4px)',
                 }}
                 aria-hidden="true"

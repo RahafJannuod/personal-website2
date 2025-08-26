@@ -118,15 +118,28 @@ const MusicSection: React.FC = () => {
                     <div className="flex items-start h-full">
                         <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full h-full flex flex-col gap-24
                         ">
-                            {getPerformanceImages().map((imageSrc, index) => (
-                                <img 
-                                    key={index}
-                                    src={imageSrc}
-                                    alt={`Musical performance ${index + 1}`}
-                                    className="rounded-lg shadow-lg w-full object-cover"
-                                    style={{ minHeight: '240px', maxHeight: '320px' }}
-                                />
-                            ))}
+                            {getPerformanceImages().map((imageSrc, index) => {
+                                let objectPosition = 'center center';
+                                if (imageSrc.includes('music-orchestra.jpg')) {
+                                    objectPosition = '80% 25%'; // Face is far right and upper area
+                                } else if (imageSrc.includes('music-performance2.jpg')) {
+                                    objectPosition = 'center 10%'; // Focus more on upper area where face is
+                                } else if (imageSrc.includes('music-performance3.jpg')) {
+                                    objectPosition = '70% 20%'; // More right and higher for face visibility
+                                } else if (imageSrc.includes('music-performance4.jpg')) {
+                                    objectPosition = 'center 15%'; // Higher up to center face better
+                                }
+                                
+                                return (
+                                    <img 
+                                        key={index}
+                                        src={imageSrc}
+                                        alt={`Musical performance ${index + 1}`}
+                                        className="rounded-lg shadow-lg w-full object-cover"
+                                        style={{ minHeight: '240px', maxHeight: '320px', objectPosition }}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
