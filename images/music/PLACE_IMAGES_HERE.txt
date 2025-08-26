@@ -1,0 +1,15 @@
+🎯 MUSIC SECTION IMAGES
+
+Drag and drop your music section images here:
+
+REQUIRED:
+- music-background.jpg (or .png/.webp) - Music section background
+- music-percussion.jpg (or .png/.webp) - Image of you playing percussion
+- music-orchestra.jpg (or .png/.webp) - Image of you with orchestra
+
+RECOMMENDED SIZES:
+- Background: 1920x1080px or larger
+- Performance images: 800x600px or larger
+- Format: JPG, PNG, or WebP
+
+Just replace these files with your actual images! 

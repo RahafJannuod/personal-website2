@@ -1,0 +1,14 @@
+🎯 TECH SECTION IMAGES
+
+Drag and drop your tech section images here:
+
+REQUIRED:
+- tech-background.jpg (or .png/.webp) - Tech section background
+- tech-profile.jpg (or .png/.webp) - Your professional profile photo
+
+RECOMMENDED SIZES:
+- Background: 1920x1080px or larger
+- Profile: 800x800px or larger
+- Format: JPG, PNG, or WebP
+
+Just replace these files with your actual images! 
