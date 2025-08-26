@@ -96,20 +96,40 @@ const Header: React.FC = () => {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`md:hidden fixed inset-0 bg-[#B9C0DA]/50 backdrop-blur-sm pt-24 transition-transform duration-300 ease-in-out z-40 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`md:hidden fixed inset-0 bg-black/80 backdrop-blur-md transition-all duration-500 ease-in-out z-40 ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
             >
-                <nav className="flex flex-col items-center space-y-8">
-                    {navLinks.map(link => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            onClick={handleLinkClick}
-                            className={`text-2xl font-medium transition-colors duration-300 ${activeSection === link.href.substring(1) ? 'text-white font-bold' : 'text-gray-200 hover:text-white'}`}
-                        >
-                            {link.label}
-                        </a>
-                    ))}
-                </nav>
+                <div className="flex items-center justify-center min-h-screen px-6">
+                    <nav className="w-full max-w-sm">
+                        <div className="bg-black/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
+                            <div className="flex flex-col space-y-6">
+                                {navLinks.map((link, index) => (
+                                    <a
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={handleLinkClick}
+                                        className={`group relative text-xl font-medium transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 ${activeSection === link.href.substring(1) ? 'text-white bg-white/20 font-bold' : 'text-gray-100 hover:text-white'}`}
+                                        style={{ animationDelay: `${index * 100}ms` }}
+                                    >
+                                        <div className="flex items-center justify-between">
+                                            <span className="relative z-10">{link.label}</span>
+                                            <svg 
+                                                className="w-5 h-5 opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300" 
+                                                fill="none" 
+                                                stroke="currentColor" 
+                                                viewBox="0 0 24 24"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                            </svg>
+                                        </div>
+                                        {activeSection === link.href.substring(1) && (
+                                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl" />
+                                        )}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </nav>
+                </div>
             </div>
         </header>
     );
