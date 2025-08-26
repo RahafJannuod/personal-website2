@@ -9,6 +9,20 @@ const MusicSection: React.FC = () => {
     const [showAllBands, setShowAllBands] = useState(false);
 
     const displayedBands = showAllBands ? bandsAndOrchestras : bandsAndOrchestras.slice(0, 3);
+    
+    const getPerformanceImages = () => {
+        const baseImages = [imageAssets.music.performance];
+        if (showAllBands) {
+            return [
+                imageAssets.music.performance,
+                imageAssets.music.performance2,
+                imageAssets.music.performance3,
+                imageAssets.music.performance4,
+                imageAssets.music.performance5,
+            ];
+        }
+        return baseImages;
+    };
 
     const handleContactClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
@@ -103,13 +117,16 @@ const MusicSection: React.FC = () => {
                         )}
                     </div>
                     <div className="flex items-start h-full">
-                        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full h-full">
-                            <img 
-                                src={imageAssets.music.performance} 
-                                alt="Musical performance" 
-                                className="rounded-lg shadow-lg w-full h-full object-cover"
-                                style={{ minHeight: '300px', maxHeight: '400px' }}
-                            />
+                        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full h-full flex flex-col gap-4">
+                            {getPerformanceImages().map((imageSrc, index) => (
+                                <img 
+                                    key={index}
+                                    src={imageSrc}
+                                    alt={`Musical performance ${index + 1}`}
+                                    className="rounded-lg shadow-lg w-full object-cover"
+                                    style={{ minHeight: '300px', maxHeight: '400px' }}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>
