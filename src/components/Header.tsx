@@ -54,7 +54,7 @@ const Header: React.FC = () => {
     const mobileActiveColor = `text-[${themeColors.accent.navHover}]`;
 
     return (
-        <header className={`sticky top-0 z-50 transition-all duration-300 transform-gpu ${isScrolled || isMenuOpen ? 'shadow-md bg-[#053149]/90 backdrop-blur-md' : 'bg-transparent'}`}>
+        <header className={`sticky top-0 z-50 transition-all duration-300 transform-gpu shadow-md bg-[#B9C0DA]/50 backdrop-blur-sm`}>
             <div className="container mx-auto px-6">
                 <nav className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-3' : 'py-4'}`}>
                     <a href="#home" className="text-2xl font-bold font-script animate-text-glow">
@@ -96,7 +96,7 @@ const Header: React.FC = () => {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`md:hidden fixed inset-0 bg-[#053149]/90 backdrop-blur-md pt-24 transition-transform duration-300 ease-in-out z-40 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`md:hidden fixed inset-0 bg-[#B9C0DA]/50 backdrop-blur-sm pt-24 transition-transform duration-300 ease-in-out z-40 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
             >
                 <nav className="flex flex-col items-center space-y-8">
                     {navLinks.map(link => (

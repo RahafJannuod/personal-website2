@@ -18,7 +18,6 @@ const MusicSection: React.FC = () => {
                 imageAssets.music.performance2,
                 imageAssets.music.performance3,
                 imageAssets.music.performance4,
-                imageAssets.music.performance5,
             ];
         }
         return baseImages;
@@ -117,14 +116,15 @@ const MusicSection: React.FC = () => {
                         )}
                     </div>
                     <div className="flex items-start h-full">
-                        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full h-full flex flex-col gap-4">
+                        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full h-full flex flex-col gap-24
+                        ">
                             {getPerformanceImages().map((imageSrc, index) => (
                                 <img 
                                     key={index}
                                     src={imageSrc}
                                     alt={`Musical performance ${index + 1}`}
                                     className="rounded-lg shadow-lg w-full object-cover"
-                                    style={{ minHeight: '300px', maxHeight: '400px' }}
+                                    style={{ minHeight: '240px', maxHeight: '320px' }}
                                 />
                             ))}
                         </div>
