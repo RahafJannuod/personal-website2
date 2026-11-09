@@ -7,21 +7,29 @@ interface GalleryItemProps {
 }
 
 const GalleryItem: React.FC<GalleryItemProps> = ({ project, onClick }) => {
-    
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            onClick(project);
+        }
+    };
+
     return (
-        <div 
+        <div
+            role="button"
+            tabIndex={0}
+            aria-label={`View photos of ${project.title}`}
             className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-2xl w-full h-full"
             onClick={() => onClick(project)}
+            onKeyDown={handleKeyDown}
         >
-            <img 
-                src={project.mainImage} 
-                alt={project.title} 
+            <img
+                src={project.mainImage}
+                alt={project.title}
+                loading="lazy"
                 className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-in-out group-hover:scale-110"
-                style={{ minHeight: '100%', minWidth: '100%' }}
-                onLoad={() => {}}
                 onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
+                    e.currentTarget.style.display = 'none';
                 }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
@@ -36,7 +44,7 @@ const GalleryItem: React.FC<GalleryItemProps> = ({ project, onClick }) => {
                     </div>
                 </div>
             </div>
-            
+
             {/* Click indicator */}
             <div className="absolute top-4 right-4 bg-white/70 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Section from '../Section';
 import GalleryItem from '../GalleryItem';
 import ProjectModal from '../ProjectModal';
-import { FadeIn, FadeInStagger } from '../AnimatedHeader';
+import { FadeIn, FadeInStagger } from '../FadeIn';
 import { craftProjects, CraftProject } from '../../data/content';
 import { themeColors, imageAssets } from '../../data/config';
 import { createGlowTextStyle, createLightGlowTextStyle } from '../../utils/styles';
@@ -10,18 +10,6 @@ import { createGlowTextStyle, createLightGlowTextStyle } from '../../utils/style
 const CraftsSection: React.FC = () => {
     const accentColor = themeColors.accent.crafts;
     const [selectedProject, setSelectedProject] = useState<CraftProject | null>(null);
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-
-    const handleProjectClick = (project: CraftProject) => {
-        setSelectedProject(project);
-        setIsModalOpen(true);
-    };
-
-    const handleCloseModal = () => {
-        setIsModalOpen(false);
-        setSelectedProject(null);
-    };
 
     return (
         <>
@@ -41,25 +29,23 @@ const CraftsSection: React.FC = () => {
                 `}</style>
                 <div>
                     <FadeIn>
-                        <h3 className="text-4xl font-bold text-center mb-12" 
+                        <h3 className="text-4xl font-bold text-center mb-12"
                             style={createGlowTextStyle(accentColor)}>
                             Projects Gallery
                         </h3>
                     </FadeIn>
-                    
-                    
+
                     <FadeInStagger className="project-gallery flex overflow-x-auto space-x-6 pb-4 snap-x snap-mandatory">
-                        {craftProjects.map((project, index) => (
+                        {craftProjects.map(project => (
                             <div key={project.id} className="flex-shrink-0 w-80 h-[400px] snap-center">
-                                <GalleryItem 
-                                    project={project} 
-                                    accentColor={accentColor} 
-                                    onClick={handleProjectClick}
+                                <GalleryItem
+                                    project={project}
+                                    onClick={setSelectedProject}
                                 />
                             </div>
                         ))}
                     </FadeInStagger>
-                    
+
                     {/* Gallery Instructions */}
                     <FadeIn className="mt-8 text-center">
                         <p className="text-lg"
@@ -70,12 +56,12 @@ const CraftsSection: React.FC = () => {
                 </div>
             </Section>
 
-            {/* Project Modal */}
-            <ProjectModal
-                project={selectedProject}
-                isOpen={isModalOpen}
-                onClose={handleCloseModal}
-            />
+            {selectedProject && (
+                <ProjectModal
+                    project={selectedProject}
+                    onClose={() => setSelectedProject(null)}
+                />
+            )}
         </>
     );
 };

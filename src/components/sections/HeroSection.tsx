@@ -1,5 +1,5 @@
 import React from 'react';
-import { imageAssets } from '../../data/config';
+import { imageAssets, themeColors } from '../../data/config';
 
 const HeroSection: React.FC = () => {
     return (
@@ -22,9 +22,9 @@ const HeroSection: React.FC = () => {
                                     0 0 2px rgba(255,255,255,.7),
                                     0 0 4px rgba(255,255,255,.5),
                                     0 0 6px rgba(255,255,255,.3),
-                                    0 0 10px #D43241aa,
-                                    0 0 14px #D4324188,
-                                    0 0 18px #D4324144
+                                    0 0 10px ${themeColors.accent.music}aa,
+                                    0 0 14px ${themeColors.accent.music}88,
+                                    0 0 18px ${themeColors.accent.music}44
                                 `
                             }}
                         >

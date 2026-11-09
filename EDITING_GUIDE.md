@@ -1,26 +1,15 @@
 # How to Customize Your Portfolio
 
-This guide explains how to easily change the colors and images on your personal portfolio website. All major customizable assets are centralized in one or two files for your convenience.
+Colors and images are set in `src/data/config.ts`. Text content, such as projects, skills, courses, and bands, is in `src/data/content.ts`.
 
-## The Central Configuration File
-
-The primary file for customization is located at: `data/config.ts`.
-
-This file contains two main objects: `themeColors` and `imageAssets`.
-
----
+Image files live in `public/images/`. A file at `public/images/hero/photo.jpg` is referenced in the code as `/images/hero/photo.jpg`.
 
 ## 1. Changing Website Colors
 
-You can change the accent colors for each section of the website by modifying the `themeColors` object in `data/config.ts`.
+Change the accent colors by editing `themeColors` in `src/data/config.ts`:
 
-### Example:
-
-Here is the `themeColors` object:
-
-```javascript
+```ts
 export const themeColors = {
-    // ... other colors
     accent: {
         tech: '#00AC95',      // Color for the "Tech" section
         music: '#D43241',     // Color for the "Music" section
@@ -30,81 +19,43 @@ export const themeColors = {
 };
 ```
 
-To change the color of the "Tech" section, simply replace the hex code `'#00AC95'` with a new one.
-
-**For example, to make it blue:**
-
-```javascript
-// ...
-tech: '#3b82f6', // New blue color
-// ...
-```
-
-The website will automatically update to use the new color across the entire section.
-
----
+The logo's glow animation has its own colors, set in `tailwind.config.js`.
 
 ## 2. Changing Section Images
 
-You can change the main background image for each section and other key images (like your profile picture) by modifying the `imageAssets` object in `data/config.ts`.
+Change section backgrounds and other key images by editing `imageAssets` in `src/data/config.ts`:
 
-### Important Note:
-
-For best performance, use URLs from an image hosting service like Unsplash, or make sure your own images are optimized for the web before using them.
-
-### Example:
-
-Here is the `imageAssets` object:
-
-```javascript
+```ts
 export const imageAssets = {
     hero: {
-        background: 'https://images.unsplash.com/...', // URL for the main landing page background
+        background: '/images/hero/hero-background.jpg',
     },
     tech: {
-        background: 'https://images.unsplash.com/...', // URL for the Tech section background
-        profile: 'https://images.unsplash.com/...',    // URL for your profile picture in the Tech section
+        background: '/images/tech/tech-background.jpg',
+        profile: '/images/tech/tech-profile.jpg',
     },
-    music: {
-        background: 'https://images.unsplash.com/...',
-        percussion: 'https://images.unsplash.com/...', // First image in the Music section
-        orchestra: 'https://images.unsplash.com/...',  // Second image in the Music section
-    },
-    crafts: {
-        background: 'https://images.unsplash.com/...',
-    },
-    footer: {
-        background: 'https://images.unsplash.com/...', // URL for the footer background
-    },
+    // ... music, crafts, footer
 };
 ```
 
-To change an image, simply replace the existing URL string with the URL of your new image.
+To change an image, either replace the file and keep its name, or add a new file and update the path. Compress images before adding them, because large photos make the site slow to load.
 
----
+## 3. Changing the Crafts Gallery
 
-## 3. Changing the "Crafts" Project Gallery Images
+Edit the `craftProjects` array in `src/data/content.ts`:
 
-The images for your handmade projects are located in a different file for better organization: `data/content.ts`.
-
-Find the `craftProjects` array inside this file.
-
-### Example:
-
-```javascript
-export const craftProjects = [
-    {
-        imageUrl: 'https://images.unsplash.com/...', // <-- CHANGE THIS URL
-        title: 'Floral Watercolour',
-        category: 'Painting'
-    },
-    {
-        imageUrl: 'https://images.unsplash.com/...', // <-- CHANGE THIS URL
-        title: 'Ceramic Mugs',
-        category: 'Pottery'
-    },
-    // ... more projects
-];
+```ts
+{
+    id: 'hand-poured-candles',
+    mainImage: '/images/gallery/gallery-01.jpg', // Shown in the gallery
+    title: 'Hand-poured Candles',
+    category: 'Candles',
+    description: 'Artisanal candles made with natural waxes and essential oils in custom containers.',
+    photos: [                                    // Shown when the project is opened
+        '/images/gallery/gallery-01.jpg',
+        '/images/gallery/gallery-01-02.jpg',
+    ],
+},
 ```
 
-To update a project image, replace the `imageUrl` for that project. You can also change the `title` and `category` here.
+To add a photo, put the file in `public/images/gallery/` and add its path to `photos`.

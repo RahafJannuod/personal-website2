@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Section from '../Section';
 import SkillBadge from '../SkillBadge';
-import { FadeIn, FadeInStagger } from '../AnimatedHeader';
+import { FadeIn, FadeInStagger } from '../FadeIn';
 import { techCourses, techSkills } from '../../data/content';
 import { themeColors, imageAssets } from '../../data/config';
-import { createGlowTextStyle, createLightGlowTextStyle } from '../../utils/styles';
+import { createAccentGlowTextStyle, createGlowTextStyle, createLightGlowTextStyle } from '../../utils/styles';
 
 const TechSection: React.FC = () => {
     const [showAllCourses, setShowAllCourses] = useState(false);
@@ -31,20 +31,12 @@ const TechSection: React.FC = () => {
                     </h3>
                     <div className="space-y-4 text-lg leading-relaxed"
                         style={createLightGlowTextStyle(accentColor)}>
-                        <p>My career is driven by a curiosity for how things work. As a QA Engineer at <span className="font-semibold" 
-                            style={{ 
-                                color: '#fff',
-                                textShadow: `
-                                    0 0 2px rgba(255,255,255,.7),
-                                    0 0 4px ${accentColor}aa,
-                                    0 0 6px ${accentColor}88
-                                `
-                            }}>SoundCloud</span>, I help deliver a flawless audio experience to millions, blending meticulous manual testing with sophisticated test automation.</p>
+                        <p>My career is driven by a curiosity for how things work. As a QA Engineer at <span className="font-semibold" style={createAccentGlowTextStyle(accentColor)}>SoundCloud</span>, I help deliver a flawless audio experience to millions, blending meticulous manual testing with sophisticated test automation.</p>
                         <p>I am fascinated by the potential of AI to revolutionize software testing and am actively pursuing knowledge in this transformative field.</p>
                     </div>
                 </FadeIn>
                 <FadeIn className="md:col-span-2 flex justify-center">
-                    <img src={imageAssets.tech.profile} alt="Rahaf Jannuod, QA Engineer" className="rounded-lg shadow-2xl w-full max-w-xs object-cover aspect-square"/>
+                    <img src={imageAssets.tech.profile} alt="Rahaf Jannuod, QA Engineer" loading="lazy" className="rounded-lg shadow-2xl w-full max-w-xs object-cover aspect-square"/>
                 </FadeIn>
             </div>
 
@@ -71,20 +63,21 @@ const TechSection: React.FC = () => {
                     </FadeIn>
                     <FadeInStagger className="grid md:grid-cols-2 gap-6">
                         {displayedCourses.map(course => (
-                            <li key={course.title} className="p-5 bg-white/25 rounded-lg list-none transition-all duration-300 hover:bg-white/35 hover:shadow-lg flex flex-col h-full">
+                            <div key={course.title} className="p-5 bg-white/25 rounded-lg transition-all duration-300 hover:bg-white/35 hover:shadow-lg flex flex-col h-full">
                                 <p className="font-semibold text-lg text-white">{course.title}</p>
-                                <p className="text-md text-gray-300 mb-1">{course.provider}</p>
+                                <p className="text-base text-gray-300 mb-1">{course.provider}</p>
                                 <div className="text-xs text-gray-400 flex flex-wrap gap-x-4 gap-y-1">
                                     <span>Issued: {course.issued}</span>
                                     <span>Credential ID: {course.credentialId}</span>
                                 </div>
-                            </li>
+                            </div>
                         ))}
                     </FadeInStagger>
                     {techCourses.length > initialCourseCount && (
                         <FadeIn>
                             <div className="mt-8 text-center">
                                 <button
+                                    type="button"
                                     onClick={() => setShowAllCourses(!showAllCourses)}
                                     className="font-semibold hover:text-white transition-colors duration-300 flex items-center group mx-auto"
                                     style={{ color: accentColor }}

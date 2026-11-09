@@ -34,6 +34,16 @@ export const createGlowTextStyle = (color: string, intensity: 'low' | 'medium' |
   };
 };
 
+// For names highlighted inside a block of text
+export const createAccentGlowTextStyle = (color: string) => ({
+  color: '#fff',
+  textShadow: `
+    0 0 2px rgba(255,255,255,.7),
+    0 0 4px ${color}aa,
+    0 0 6px ${color}88
+  `
+});
+
 export const createLightGlowTextStyle = (color: string) => ({
   color: '#fff',
   textShadow: `

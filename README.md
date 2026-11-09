@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Rahaf Jannuod - Personal Portfolio
 
-# Run and deploy your AI Studio app
+A personal portfolio site covering tech, music, and handmade crafts, built with React, TypeScript, Vite, and Tailwind CSS.
 
-This contains everything you need to run your app locally.
+Live site: https://personal-website2-beryl.vercel.app/
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ZJbyDeptD0xT1mOmDAbfNcWEe2wTgKaY
+## Run locally
 
-## Run Locally
+Requires Node.js.
 
-**Prerequisites:**  Node.js
+```bash
+npm install
+npm run dev
+```
 
+The site opens at http://localhost:3000.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Build
+
+```bash
+npm run build
+```
+
+This type-checks the code and writes the production site to `dist/`.
+
+## Deployment
+
+Vercel publishes the site automatically whenever `main` is pushed.
+
+## Editing content
+
+See [EDITING_GUIDE.md](EDITING_GUIDE.md) for how to change colors, images, and text.
