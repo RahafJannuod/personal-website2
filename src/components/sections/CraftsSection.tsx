@@ -29,8 +29,7 @@ const CraftsSection: React.FC = () => {
                 `}</style>
                 <div>
                     <FadeIn>
-                        <h3 className="text-4xl font-bold text-center mb-12"
-                            style={createGlowTextStyle(accentColor)}>
+                        <h3 className="text-4xl font-bold text-center mb-12" style={createGlowTextStyle(accentColor)}>
                             Projects Gallery
                         </h3>
                     </FadeIn>
@@ -48,8 +47,7 @@ const CraftsSection: React.FC = () => {
 
                     {/* Gallery Instructions */}
                     <FadeIn className="mt-8 text-center">
-                        <p className="text-lg"
-                            style={createLightGlowTextStyle(accentColor)}>
+                        <p className="text-lg" style={createLightGlowTextStyle(accentColor)}>
                             💡 Click on any project to explore more photos and details
                         </p>
                     </FadeIn>

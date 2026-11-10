@@ -1,10 +1,6 @@
-export const createGlowTextStyle = (color: string, intensity: 'low' | 'medium' | 'high' = 'medium') => {
+// Strong white and accent glow, for section titles and headings
+export const createGlowTextStyle = (color: string, intensity: 'medium' | 'high' = 'medium') => {
   const glowIntensities = {
-    low: {
-      base: 0.3,
-      mid: 0.2,
-      light: 0.1
-    },
     medium: {
       base: 0.7,
       mid: 0.5,
@@ -34,6 +30,16 @@ export const createGlowTextStyle = (color: string, intensity: 'low' | 'medium' |
   };
 };
 
+// Sharp white text with only a faint accent glow, for text over busy photos
+export const createCrispTextStyle = (color: string) => ({
+  color: '#fff',
+  textShadow: `
+    0 1px 2px rgba(0,0,0,0.9),
+    0 0 6px rgba(0,0,0,0.5),
+    0 0 14px ${color}66
+  `
+});
+
 // For names highlighted inside a block of text
 export const createAccentGlowTextStyle = (color: string) => ({
   color: '#fff',
@@ -44,6 +50,7 @@ export const createAccentGlowTextStyle = (color: string) => ({
   `
 });
 
+// Softer glow, for body text inside the sections
 export const createLightGlowTextStyle = (color: string) => ({
   color: '#fff',
   textShadow: `

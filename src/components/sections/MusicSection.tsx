@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Section from '../Section';
-import { FadeIn, FadeInStagger } from '../FadeIn';
+import { FadeIn } from '../FadeIn';
+import ShowMoreButton from '../ShowMoreButton';
 import { bandsAndOrchestras } from '../../data/content';
 import { themeColors, imageAssets } from '../../data/config';
 import { createAccentGlowTextStyle, createGlowTextStyle, createLightGlowTextStyle } from '../../utils/styles';
@@ -13,17 +14,21 @@ const performanceImages = [
     { src: imageAssets.music.performance4, objectPosition: 'center 15%' },
 ];
 
-const readableTextShadow = { textShadow: '0 0 6px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.6)' };
+// The two photos beside the intro text
+const introImages = [
+    { src: imageAssets.music.percussion, alt: 'Playing percussion', className: 'order-2 md:order-1' },
+    { src: imageAssets.music.orchestra, alt: 'Orchestra performance', className: 'order-3' },
+];
+
+const initialBandCount = 3;
+
+const readableTextShadow ={ textShadow: '0 0 6px rgba(0,0,0,0.8), 0 1px 3px rgba(0,0,0,0.6)' };
 
 const MusicSection: React.FC = () => {
     const [showAllBands, setShowAllBands] = useState(false);
 
-    const displayedBands = showAllBands ? bandsAndOrchestras : bandsAndOrchestras.slice(0, 3);
+    const displayedBands = showAllBands ? bandsAndOrchestras : bandsAndOrchestras.slice(0, initialBandCount);
     const displayedImages = showAllBands ? performanceImages : performanceImages.slice(0, 1);
-
-    const scrollToContact = () => {
-        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    };
 
     const accentColor = themeColors.accent.music;
 
@@ -37,37 +42,27 @@ const MusicSection: React.FC = () => {
         >
             <FadeIn className="mb-16">
                 <div className="max-w-5xl mx-auto text-center leading-relaxed text-lg grid md:grid-cols-3 gap-6 items-center">
-                    {/* Left Image */}
-                    <div className="order-2 md:order-1">
-                        <img
-                            src={imageAssets.music.percussion}
-                            alt="Playing percussion"
-                            loading="lazy"
-                            className="rounded-lg shadow-2xl w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                    </div>
-
-                    {/* Center Text */}
+                    {/* Text in the middle on desktop, first on phones */}
                     <div className="order-1 md:order-2" style={createLightGlowTextStyle(accentColor)}>
                         <p className="mb-4">Music is a universal language that connects souls. My journey began with the primal beat of the drums and expanded into orchestral percussion and the rich traditions of Middle Eastern instruments.</p>
                         <p>Each performance is a story, each rhythm a heartbeat.</p>
                     </div>
 
-                    {/* Right Image */}
-                    <div className="order-3">
-                        <img
-                            src={imageAssets.music.orchestra}
-                            alt="Orchestra performance"
-                            loading="lazy"
-                            className="rounded-lg shadow-2xl w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300"
-                        />
-                    </div>
+                    {introImages.map(image => (
+                        <div key={image.src} className={image.className}>
+                            <img
+                                src={image.src}
+                                alt={image.alt}
+                                loading="lazy"
+                                className="rounded-lg shadow-2xl w-full h-48 md:h-64 object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                    ))}
                 </div>
             </FadeIn>
 
-            <FadeIn className="mb-16">
-                <h3 className="text-4xl font-bold text-center mb-12"
-                    style={createGlowTextStyle(accentColor)}>
+            <FadeIn>
+                <h3 className="text-4xl font-bold text-center mb-12" style={createGlowTextStyle(accentColor)}>
                     Bands & Orchestras
                 </h3>
                 <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-white" style={readableTextShadow}>
@@ -90,19 +85,13 @@ const MusicSection: React.FC = () => {
                                 </li>
                             ))}
                         </ul>
-                        {bandsAndOrchestras.length > 3 && (
-                            <button
-                                type="button"
-                                onClick={() => setShowAllBands(!showAllBands)}
-                                className="mt-4 font-semibold hover:text-white transition-colors duration-300 flex items-center group"
-                                style={{ color: accentColor }}
-                                aria-expanded={showAllBands}
-                            >
-                                <span>{showAllBands ? 'Show Less' : 'Show More'}</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ml-1 transition-transform duration-300 ${showAllBands ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </button>
+                        {bandsAndOrchestras.length > initialBandCount && (
+                            <ShowMoreButton
+                                expanded={showAllBands}
+                                onToggle={() => setShowAllBands(!showAllBands)}
+                                color={accentColor}
+                                className="mt-4"
+                            />
                         )}
                     </div>
                     <div className="flex items-start h-full">
@@ -121,54 +110,6 @@ const MusicSection: React.FC = () => {
                     </div>
                 </div>
             </FadeIn>
-
-            <div>
-                <FadeIn>
-                    <h3 className="text-4xl font-bold text-center mb-12"
-                        style={createGlowTextStyle(accentColor)}>
-                        Music Lessons
-                    </h3>
-                </FadeIn>
-                <div className="max-w-5xl mx-auto">
-                    <FadeInStagger className="grid md:grid-cols-3 gap-8 text-center text-white" style={readableTextShadow}>
-                        <div>
-                            <h4 className="text-2xl font-bold mb-2"
-                                style={createGlowTextStyle(accentColor)}>
-                                Drums
-                            </h4>
-                            <p>All levels, from beginner grooves to advanced techniques.</p>
-                        </div>
-                        <div>
-                            <h4 className="text-2xl font-bold mb-2"
-                                style={createGlowTextStyle(accentColor)}>
-                                Guitar
-                            </h4>
-                            <p>Intermediate players looking to refine their skills.</p>
-                        </div>
-                        <div>
-                            <h4 className="text-2xl font-bold mb-2"
-                                style={createGlowTextStyle(accentColor)}>
-                                Piano
-                            </h4>
-                            <p>Beginner lessons to build a strong musical foundation.</p>
-                        </div>
-                    </FadeInStagger>
-                    <FadeIn className="text-center mt-10">
-                        <button
-                          type="button"
-                          onClick={scrollToContact}
-                          className="inline-block font-bold py-3 px-8 rounded-full transform transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 relative overflow-hidden"
-                          style={{
-                              ...createGlowTextStyle(accentColor),
-                              backgroundColor: 'rgba(0,0,0,0.5)',
-                              boxShadow: `0 0 10px ${accentColor}88, 0 0 20px ${accentColor}44`
-                          }}
-                        >
-                            For more info about lessons, contact me
-                        </button>
-                    </FadeIn>
-                </div>
-            </div>
         </Section>
     );
 };

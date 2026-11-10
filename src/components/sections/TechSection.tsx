@@ -1,97 +1,126 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Section from '../Section';
-import SkillBadge from '../SkillBadge';
-import { FadeIn, FadeInStagger } from '../FadeIn';
-import { techCourses, techSkills } from '../../data/content';
+import { FadeIn } from '../FadeIn';
+import { certifications, nomiBoomiLinks, techExperience, techProjects, testingSkills } from '../../data/content';
 import { themeColors, imageAssets } from '../../data/config';
-import { createAccentGlowTextStyle, createGlowTextStyle, createLightGlowTextStyle } from '../../utils/styles';
+import { createGlowTextStyle, createLightGlowTextStyle } from '../../utils/styles';
+
+const accentColor = themeColors.accent.tech;
+
+const SubHeading: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+    <h3 className="text-2xl md:text-3xl font-bold mb-5" style={createGlowTextStyle(accentColor, 'high')}>
+        {children}
+    </h3>
+);
+
+// A store button; without a link yet it shows the same way but isn't clickable
+const StoreButton: React.FC<{ label: string; href: string }> = ({ label, href }) => {
+    const className = 'inline-block rounded-full bg-black/50 border border-white/30 px-4 py-1.5 text-sm font-bold transition-transform duration-200 hover:scale-105';
+    return href
+        ? <a href={href} target="_blank" rel="noopener noreferrer" className={className}>{label}</a>
+        : <span className={`${className} opacity-80 cursor-default`}>{label}</span>;
+};
 
 const TechSection: React.FC = () => {
-    const [showAllCourses, setShowAllCourses] = useState(false);
-
-    const initialCourseCount = 4; // 2 rows * 2 cols
-    const displayedCourses = showAllCourses ? techCourses : techCourses.slice(0, initialCourseCount);
-    
-    const accentColor = themeColors.accent.tech;
-
     return (
         <Section
             id="tech"
             backgroundImageUrl={imageAssets.tech.background}
-            title="QA Engineer"
-            subtitle="A journey through technology, continuous learning, and future aspirations in AI."
+            title="QA Specialist"
+            subtitle="I make sure apps work well before they reach people."
             accentColor={accentColor}
         >
-            <div className="grid md:grid-cols-5 gap-10 items-center mb-16">
-                <FadeIn className="md:col-span-3">
-                    <h3 className="text-4xl font-bold mb-6" 
-                        style={createGlowTextStyle(accentColor)}
-                    >
-                        My Tech Journey
-                    </h3>
-                    <div className="space-y-4 text-lg leading-relaxed"
-                        style={createLightGlowTextStyle(accentColor)}>
-                        <p>My career is driven by a curiosity for how things work. As a QA Engineer at <span className="font-semibold" style={createAccentGlowTextStyle(accentColor)}>SoundCloud</span>, I help deliver a flawless audio experience to millions, blending meticulous manual testing with sophisticated test automation.</p>
-                        <p>I am fascinated by the potential of AI to revolutionize software testing and am actively pursuing knowledge in this transformative field.</p>
+            <div className="space-y-12 text-white" style={createLightGlowTextStyle(accentColor)}>
+                {/* About */}
+                <FadeIn className="flex flex-col sm:flex-row items-center gap-6">
+                    <img
+                        src={imageAssets.tech.profile}
+                        alt="Rahaf Jannuod"
+                        loading="lazy"
+                        className="w-32 h-32 md:w-40 md:h-40 flex-shrink-0 rounded-full object-cover shadow-2xl border-2"
+                        style={{ borderColor: accentColor }}
+                    />
+                    <div className="space-y-3 text-lg leading-relaxed text-center sm:text-left">
+                        <p>I'm a QA Specialist and iOS Release Manager at SoundCloud. I test new features, find bugs, and help each iOS release reach millions of listeners.</p>
+                        <p>Before tech, music was my full-time job for more than 10 years. I still learn something new every day, and I build my own apps and games to grow my skills.</p>
                     </div>
                 </FadeIn>
-                <FadeIn className="md:col-span-2 flex justify-center">
-                    <img src={imageAssets.tech.profile} alt="Rahaf Jannuod, QA Engineer" loading="lazy" className="rounded-lg shadow-2xl w-full max-w-xs object-cover aspect-square"/>
-                </FadeIn>
-            </div>
 
-            <div className="space-y-16">
-                <div>
-                    <FadeIn>
-                        <h3 className="text-3xl font-bold mb-8"
-                            style={createGlowTextStyle(accentColor, 'high')}
-                        >
-                            Skills & Expertise
-                        </h3>
-                    </FadeIn>
-                    <FadeInStagger className="flex flex-wrap gap-3">
-                        {techSkills.map(skill => <SkillBadge key={skill} color={accentColor}>{skill}</SkillBadge>)}
-                    </FadeInStagger>
-                </div>
-                <div>
-                    <FadeIn>
-                        <h3 className="text-3xl font-bold mb-8"
-                            style={createGlowTextStyle(accentColor, 'high')}
-                        >
-                            Courses & Certifications
-                        </h3>
-                    </FadeIn>
-                    <FadeInStagger className="grid md:grid-cols-2 gap-6">
-                        {displayedCourses.map(course => (
-                            <div key={course.title} className="p-5 bg-white/25 rounded-lg transition-all duration-300 hover:bg-white/35 hover:shadow-lg flex flex-col h-full">
-                                <p className="font-semibold text-lg text-white">{course.title}</p>
-                                <p className="text-base text-gray-300 mb-1">{course.provider}</p>
-                                <div className="text-xs text-gray-400 flex flex-wrap gap-x-4 gap-y-1">
-                                    <span>Issued: {course.issued}</span>
-                                    <span>Credential ID: {course.credentialId}</span>
+                {/* Experience timeline */}
+                <FadeIn>
+                    <SubHeading>Experience</SubHeading>
+                    <ol className="border-l-2 ml-2 space-y-6" style={{ borderColor: `${accentColor}99` }}>
+                        {techExperience.map(job => (
+                            <li key={job.role} className="relative pl-6">
+                                <span className="absolute -left-[9px] top-2 w-4 h-4 rounded-full" style={{ backgroundColor: accentColor }} aria-hidden="true"></span>
+                                <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                                    <p className="text-lg font-bold">{job.role}</p>
+                                    <p className="text-sm opacity-80">{job.dates}</p>
                                 </div>
+                                <p className="text-sm opacity-80">{job.place}</p>
+                                <p className="mt-1">{job.text}</p>
+                            </li>
+                        ))}
+                    </ol>
+                </FadeIn>
+
+                {/* Projects */}
+                <FadeIn>
+                    <SubHeading>Projects</SubHeading>
+
+                    {/* Featured: the game, with its icon and name logo on either side */}
+                    <div className="rounded-xl bg-black/25 p-4 mb-3 grid grid-cols-2 sm:grid-cols-[6rem_1fr_6rem] gap-4 items-center">
+                        <img src={imageAssets.projects.nomiBoomiIcon} alt="Nomi Boomi app icon" loading="lazy" className="w-24 h-24 rounded-2xl shadow-lg justify-self-center" />
+                        <img src={imageAssets.projects.nomiBoomiLogo} alt="Nomi Boomi: Move, eat, BOOM!" loading="lazy" className="w-24 h-24 rounded-2xl shadow-lg justify-self-center sm:order-3" />
+                        <div className="col-span-2 sm:col-span-1 sm:order-2 text-center">
+                            <p className="text-xl font-bold">Nomi Boomi</p>
+                            <p className="text-sm">I've loved puzzle games since I was little, so I made my own with Claude AI. 150 levels in 4 worlds.</p>
+                            <div className="flex justify-center gap-2 mt-2">
+                                <StoreButton label="App Store" href={nomiBoomiLinks.appStore} />
+                                <StoreButton label="Google Play" href={nomiBoomiLinks.googlePlay} />
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul className="grid sm:grid-cols-3 gap-3">
+                        {techProjects.map(project => (
+                            <li key={project.name} className="rounded-xl bg-black/25 p-4 flex flex-col text-center">
+                                <p className="font-bold">{project.name}</p>
+                                <p className="text-sm opacity-90 flex-1">{project.text}</p>
+                                {project.href && (
+                                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="mt-2 text-sm underline" style={{ color: accentColor }}>
+                                        GitHub
+                                    </a>
+                                )}
+                            </li>
+                        ))}
+                    </ul>
+                </FadeIn>
+
+                {/* Skills, grouped */}
+                <FadeIn>
+                    <SubHeading>How I work</SubHeading>
+                    <dl className="space-y-3">
+                        {testingSkills.map(({ group, items }) => (
+                            <div key={group} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                                <dt className="w-28 flex-shrink-0 font-bold" style={{ color: accentColor }}>{group}</dt>
+                                <dd>{items.join(' · ')}</dd>
                             </div>
                         ))}
-                    </FadeInStagger>
-                    {techCourses.length > initialCourseCount && (
-                        <FadeIn>
-                            <div className="mt-8 text-center">
-                                <button
-                                    type="button"
-                                    onClick={() => setShowAllCourses(!showAllCourses)}
-                                    className="font-semibold hover:text-white transition-colors duration-300 flex items-center group mx-auto"
-                                    style={{ color: accentColor }}
-                                    aria-expanded={showAllCourses}
-                                >
-                                    <span>{showAllCourses ? 'Show Less' : 'Show More'}</span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" className={`h-5 w-5 ml-1 transition-transform duration-300 ${showAllCourses ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </FadeIn>
-                    )}
-                </div>
+                    </dl>
+                </FadeIn>
+
+                {/* Certifications, one slim row each */}
+                <FadeIn>
+                    <SubHeading>Certifications</SubHeading>
+                    <ul className="flex flex-wrap gap-2">
+                        {certifications.map(cert => (
+                            <li key={cert.name} className="rounded-full bg-black/25 border px-3 py-1 text-sm" style={{ borderColor: `${accentColor}88` }}>
+                                {cert.name} <span className="opacity-70">· {cert.provider}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </FadeIn>
             </div>
         </Section>
     );

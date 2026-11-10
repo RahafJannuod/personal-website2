@@ -17,3 +17,37 @@
     @apply font-heading;
   }
 }
+
+@layer components {
+  /* Background photos: slightly see-through, fading into the neighbouring sections */
+  .section-bg {
+    opacity: 0.8;
+    filter: brightness(0.6);
+  }
+
+  /* Darker corners, sitting on top of the background photo */
+  .section-vignette {
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+  }
+
+  .section-bg,
+  .section-vignette {
+    --fade: 4rem;
+    --fade-top: var(--fade);
+    --fade-bottom: var(--fade);
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black var(--fade-top),
+      black calc(100% - var(--fade-bottom)),
+      transparent
+    );
+  }
+
+  @media (min-width: 768px) {
+    .section-bg,
+    .section-vignette {
+      --fade: 6rem;
+    }
+  }
+}

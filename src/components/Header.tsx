@@ -6,6 +6,7 @@ const Header: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
+    const isActive = (href: string) => activeSection === href.substring(1);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -40,7 +41,7 @@ const Header: React.FC = () => {
     return (
         <>
             <header
-                className="sticky top-0 z-50 transition-all duration-300 transform-gpu shadow-md bg-[#4B5D3F]/80 backdrop-blur-sm"
+                className="sticky top-0 z-50 transition-all duration-300 transform-gpu shadow-md bg-white/20 backdrop-blur-md"
                 style={{ '--nav-hover': themeColors.accent.navHover } as React.CSSProperties}
             >
                 <div className="container mx-auto px-6">
@@ -55,7 +56,7 @@ const Header: React.FC = () => {
                                 <a
                                     key={link.href}
                                     href={link.href}
-                                    className={`group relative text-gray-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-[var(--nav-hover)] after:transition-all after:duration-300 ${activeSection === link.href.substring(1) ? 'text-white after:w-full' : 'hover:after:w-full'}`}
+                                    className={`group relative text-gray-300 after:content-[''] after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-0.5 after:bg-[var(--nav-hover)] after:transition-all after:duration-300 ${isActive(link.href) ? 'text-white after:w-full' : 'hover:after:w-full'}`}
                                 >
                                     <span className="relative inline-block overflow-hidden h-5">
                                         <span className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.76,0,0.24,1)] group-hover:-translate-y-full">
@@ -101,7 +102,7 @@ const Header: React.FC = () => {
                                         key={link.href}
                                         href={link.href}
                                         onClick={() => setIsMenuOpen(false)}
-                                        className={`group relative text-xl font-medium transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 ${activeSection === link.href.substring(1) ? 'text-white bg-white/20 font-bold' : 'text-gray-100 hover:text-white'}`}
+                                        className={`group relative text-xl font-medium transition-all duration-300 py-3 px-4 rounded-xl hover:bg-white/10 ${isActive(link.href) ? 'text-white bg-white/20 font-bold' : 'text-gray-100 hover:text-white'}`}
                                     >
                                         <div className="flex items-center justify-between">
                                             <span className="relative z-10">{link.label}</span>
@@ -114,7 +115,7 @@ const Header: React.FC = () => {
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                             </svg>
                                         </div>
-                                        {activeSection === link.href.substring(1) && (
+                                        {isActive(link.href) && (
                                             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl" />
                                         )}
                                     </a>

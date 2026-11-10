@@ -9,11 +9,16 @@ export const themeColors = {
 
 export const imageAssets = {
     hero: {
-        background: '/images/hero/hero-background.jpg',
+        portrait: '/images/hero/hero-portrait.jpg',
+        background: '/images/hero/hero-records.jpg',
     },
     tech: {
         background: '/images/tech/tech-background.jpg',
         profile: '/images/tech/tech-profile.jpg',
+    },
+    projects: {
+        nomiBoomiIcon: '/images/projects/nomiboomi-icon.png',
+        nomiBoomiLogo: '/images/projects/nomiboomi-logo.jpg',
     },
     music: {
         background: '/images/music/music-background.jpg',

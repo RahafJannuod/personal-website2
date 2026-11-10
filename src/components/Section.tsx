@@ -1,5 +1,6 @@
 import React from 'react';
 import { FadeIn } from './FadeIn';
+import SectionBackground from './SectionBackground';
 import { createGlowTextStyle, createLightGlowTextStyle } from '../utils/styles';
 
 interface SectionProps {
@@ -12,20 +13,17 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = ({ id, backgroundImageUrl, title, subtitle, accentColor, children }) => (
-    <section id={id} className="relative text-white overflow-hidden">
-        <div
-            className="absolute inset-0 bg-cover bg-center filter brightness-[.6]"
-            style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
-            aria-hidden="true"
-        ></div>
+    // Each section overlaps the bottom padding of the one above, and their backgrounds cross-fade over that overlap
+    <section id={id} className="relative -mt-16 md:-mt-24 text-white overflow-hidden">
+        <SectionBackground src={backgroundImageUrl} />
 
-        <div className="relative w-full px-4 py-20 md:py-28 z-10">
+        <div className="relative w-full px-4 py-16 md:py-24 z-10">
             <div className="max-w-5xl mx-auto">
-                <div className="bg-white/20 backdrop-blur-md rounded-xl shadow-2xl p-8 md:p-16">
+                <div className="bg-white/20 backdrop-blur-md rounded-xl shadow-2xl p-6 md:p-12">
                     <FadeIn>
-                        <div className="max-w-3xl mx-auto text-center mb-16">
+                        <div className="max-w-3xl mx-auto text-center mb-10">
                             <h2
-                                className="text-5xl md:text-6xl font-bold mb-6 transition-all duration-300"
+                                className="text-5xl md:text-6xl font-bold mb-6"
                                 style={createGlowTextStyle(accentColor)}
                             >
                                 {title}
