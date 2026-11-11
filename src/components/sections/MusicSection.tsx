@@ -66,7 +66,7 @@ const MusicSection: React.FC = () => {
                     Bands & Orchestras
                 </h3>
                 <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6 text-white" style={readableTextShadow}>
-                    <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl flex flex-col">
+                    <div className="bg-black/20 rounded-lg p-4 shadow-2xl flex flex-col">
                         <ul className="space-y-4 flex-grow">
                             {displayedBands.map(band => (
                                 <li key={`${band.name}-${band.role}`} className="pl-4 transition-all duration-300 hover:bg-white/25 py-2 rounded"
@@ -95,7 +95,7 @@ const MusicSection: React.FC = () => {
                         )}
                     </div>
                     <div className="flex items-start h-full">
-                        <div className="bg-black/20 backdrop-blur-sm rounded-lg p-4 shadow-2xl w-full h-full flex flex-col gap-24">
+                        <div className="bg-black/20 rounded-lg p-4 shadow-2xl w-full h-full flex flex-col gap-24">
                             {displayedImages.map(({ src, objectPosition }, index) => (
                                 <img
                                     key={src}

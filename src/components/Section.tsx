@@ -29,7 +29,7 @@ const Section: React.FC<SectionProps> = ({ id, backgroundImageUrl, title, subtit
                                 {title}
                             </h2>
                             <p
-                                className="text-lg leading-relaxed backdrop-blur-sm bg-black/20 p-4 rounded-lg"
+                                className="text-lg leading-relaxed bg-black/20 p-4 rounded-lg"
                                 style={createLightGlowTextStyle(accentColor)}
                             >
                                 {subtitle}

@@ -52,7 +52,7 @@ const HeroSection: React.FC = () => {
                             ))}
                         </div>
                         <div
-                            className="bg-black/25 backdrop-blur-sm rounded-lg p-5 mt-4 text-base lg:text-lg"
+                            className="bg-black/25 rounded-lg p-5 mt-4 text-base lg:text-lg"
                             style={crispText}
                         >
                             <p>Blending art, music, craft, and technology with elegance, energy, and intelligence.</p>
@@ -60,7 +60,7 @@ const HeroSection: React.FC = () => {
                         </div>
 
                         {/* Music lessons */}
-                        <div className="bg-black/25 backdrop-blur-sm rounded-lg p-4 mt-4 text-center" style={crispText}>
+                        <div className="bg-black/25 rounded-lg p-4 mt-4 text-center" style={crispText}>
                             <h2 className="text-2xl font-bold mb-3">
                                 Music Lessons
                             </h2>

@@ -3,17 +3,11 @@ import { navLinks } from '../data/content';
 import { themeColors } from '../data/config';
 
 const Header: React.FC = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
     const isActive = (href: string) => activeSection === href.substring(1);
 
     useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
         // Highlight the nav link of the section in the middle of the viewport
         const observer = new IntersectionObserver((entries) => {
             const intersectingEntry = entries.find(entry => entry.isIntersecting);
@@ -33,7 +27,6 @@ const Header: React.FC = () => {
         });
 
         return () => {
-            window.removeEventListener('scroll', handleScroll);
             observer.disconnect();
         };
     }, []);
@@ -41,11 +34,12 @@ const Header: React.FC = () => {
     return (
         <>
             <header
-                className="sticky top-0 z-50 transition-all duration-300 transform-gpu shadow-md bg-white/20 backdrop-blur-md"
+                className="sticky top-0 z-50 transform-gpu shadow-md bg-white/20 backdrop-blur-md"
                 style={{ '--nav-hover': themeColors.accent.navHover } as React.CSSProperties}
             >
                 <div className="container mx-auto px-6">
-                    <nav className={`flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-3' : 'py-4'}`}>
+                    {/* One fixed height: a bar that shrinks on scroll moves the page under it and makes it flicker */}
+                    <nav className="flex justify-between items-center py-4">
                         <a href="#home" className="text-2xl font-bold font-heading text-white animate-text-glow">
                             Rahaf Jannuod
                         </a>
@@ -95,7 +89,7 @@ const Header: React.FC = () => {
             >
                 <div className="flex items-center justify-center min-h-screen px-6">
                     <nav className="w-full max-w-sm">
-                        <div className="bg-black/80 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/20">
+                        <div className="bg-black/80 rounded-2xl p-8 shadow-2xl border border-white/20">
                             <div className="flex flex-col space-y-6">
                                 {navLinks.map(link => (
                                     <a
